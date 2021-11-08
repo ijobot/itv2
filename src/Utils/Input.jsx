@@ -10,7 +10,7 @@ const StyledInput = styled.input`
   font-size: 1.3rem;
   font-weight: bold;
   line-height: 1;
-  height: 3.25rem;
+  height: 3.62rem;
 
   &:not(:last-of-type) {
     margin-bottom: 1rem;

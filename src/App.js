@@ -12,11 +12,11 @@ import { CombatantContextProvider } from "./Contexts/CombatantContext";
 
 const StyledApp = styled.div`
   display: grid;
-  grid-template-columns: 2rem minmax(220px, 1fr) 2rem 3fr 2rem;
-  grid-template-rows: 2rem auto 2rem 1fr 2rem;
+  grid-template-columns: 3rem 1fr 3rem 4fr 3rem;
+  grid-template-rows: 3rem auto 3rem 1fr 3rem;
   text-align: center;
   min-height: 100vh;
-  background-color: #6a5d83;
+  background-color: #4f4066;
   background-image: url(https://p2.piqsels.com/preview/532/313/113/texture-concrete-grey-stone.jpg);
   background-repeat: no-repeat;
   background-size: cover;

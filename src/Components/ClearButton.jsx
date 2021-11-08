@@ -6,13 +6,11 @@ const ClearButton = () => {
   const { handleClearCombatants } = useContext(CombatantContext);
 
   return (
-    <div>
-      <Button
-        color="#6a5d83"
-        text="Clear Combatants"
-        onClick={(e) => handleClearCombatants(e)}
-      />
-    </div>
+    <Button
+      color="#6a5d83"
+      text="Clear All"
+      onClick={(e) => handleClearCombatants(e)}
+    />
   );
 };
 

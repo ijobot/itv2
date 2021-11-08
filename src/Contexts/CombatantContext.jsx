@@ -1,5 +1,6 @@
 import React, { useState, createContext, useContext } from "react";
 import { ModalContext } from "./ModalContext";
+import cloneDeep from "lodash.clonedeep";
 
 const CombatantContext = createContext();
 
@@ -19,13 +20,15 @@ const CombatantContextProvider = (props) => {
   };
 
   const addCombatant = (newCombatant) => {
-    combatantList.push(newCombatant);
-    setCombatantList(combatantList);
+    const updatedCombatantList = cloneDeep(combatantList);
+    updatedCombatantList.push(newCombatant);
+    setCombatantList(updatedCombatantList);
   };
 
   const removeCombatant = (index) => {
-    combatantList.splice(index, 1);
-    setCombatantList(combatantList);
+    const updatedCombatantList = cloneDeep(combatantList);
+    updatedCombatantList.splice(index, 1);
+    setCombatantList(updatedCombatantList);
   };
 
   const handleClearCombatants = (e) => {
@@ -42,6 +45,7 @@ const CombatantContextProvider = (props) => {
         setName,
         setScore,
         combatantList,
+        combatantRowColor,
         handleClearCombatants,
       }}
     >

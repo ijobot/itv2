@@ -7,15 +7,15 @@ const StyledMainTitle = styled.h1`
   font-size: 3rem;
   font-weight: bold;
   color: #6a5d83;
-  line-height: 1;
-  background-color: #222422;
+  line-height: 1.2;
+  background-color: #0c0122;
   border: 2px solid #6a5d83;
   padding: 0.5rem;
-  padding-bottom: 0.9rem;
 `;
 
 const MainTitle = () => {
-  return <StyledMainTitle>Initiative Tracker</StyledMainTitle>;
+  const appTitle = "Battle Plan";
+  return <StyledMainTitle>{appTitle}</StyledMainTitle>;
 };
 
 export default MainTitle;

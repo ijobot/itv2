@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { CombatantContext } from "../Contexts/CombatantContext";
-import Combatant from "./Combatant";
+import CombatantRow from "./CombatantRow";
 
 const StyledCombatants = styled.div`
   height: 100%;
@@ -12,9 +12,8 @@ const StyledCombatants = styled.div`
 
 const Combatants = () => {
   const { combatantList } = useContext(CombatantContext);
-
   const combatantListMap = combatantList.map((combatantData, index) => (
-    <Combatant
+    <CombatantRow
       combatantData={combatantData}
       index={index}
       key={combatantData.name + combatantData.score}
