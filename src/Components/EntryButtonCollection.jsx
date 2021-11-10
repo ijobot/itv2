@@ -19,6 +19,7 @@ const EntryButtonCollection = () => {
         onClick={(e) =>
           handleOpenModal(e, "#8CBA80", "Player", "Enter Player Details")
         }
+        marginButton
       />
       <Button
         color="#DA4167"
@@ -26,6 +27,7 @@ const EntryButtonCollection = () => {
         onClick={(e) =>
           handleOpenModal(e, "#DA4167", "Monster", "Enter Monster Details")
         }
+        marginButton
       />
       <Button
         color="#2E86AB"
@@ -33,6 +35,7 @@ const EntryButtonCollection = () => {
         onClick={(e) =>
           handleOpenModal(e, "#2E86AB", "NPC", "Enter NPC Details")
         }
+        marginButton
       />
     </StyledEntryButtonCollection>
   );

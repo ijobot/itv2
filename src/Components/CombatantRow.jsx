@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { CombatantContext } from "../Contexts/CombatantContext";
+import { ModalContext } from "../Contexts/ModalContext";
 import Button from "../Utils/Button";
 import CombatantDetails from "./CombatantDetails";
 import TypeDropDown from "../Utils/TypeDropDown";
 import NameDropDown from "../Utils/NameDropDown";
 import ScoreDropDown from "../Utils/ScoreDropDown";
+import cloneDeep from "lodash.clonedeep";
 
 const StyledCombatantRow = styled.div`
   display: grid;
@@ -21,34 +23,42 @@ const StyledCombatantRow = styled.div`
 
 const CombatantRow = ({ combatantData, index }) => {
   const { removeCombatant } = useContext(CombatantContext);
+  const { combatantRowColor } = useContext(ModalContext);
+
   const [showTypeDropDown, setShowTypeDropDown] = useState(false);
   const [showNameDropDown, setShowNameDropDown] = useState(false);
   const [showScoreDropDown, setShowScoreDropDown] = useState(false);
+
+  // const clonedCombatantData = cloneDeep(combatantData);
+  // const combatantColor = clonedCombatantData.combatantRowColor;
+
   return (
     <StyledCombatantRow
       style={{ backgroundColor: combatantData.combatantRowColor }}
+      index={index}
     >
       <CombatantDetails
         text={combatantData.combatantType}
         onClick={() => setShowTypeDropDown(!showTypeDropDown)}
-      ></CombatantDetails>
-      {showTypeDropDown && (
-        <TypeDropDown
-          style={{ backgroundColor: combatantData.combatantRowColor }}
-        />
-      )}
+      >
+        {showTypeDropDown && (
+          <TypeDropDown color={combatantRowColor} index={index} />
+        )}
+      </CombatantDetails>
 
       <CombatantDetails
         text={combatantData.name}
         onClick={() => setShowNameDropDown(!showNameDropDown)}
-      ></CombatantDetails>
-      {showNameDropDown && <NameDropDown />}
+      >
+        {showNameDropDown && <NameDropDown index={index} />}
+      </CombatantDetails>
 
       <CombatantDetails
         text={combatantData.score}
         onClick={() => setShowScoreDropDown(!showScoreDropDown)}
-      ></CombatantDetails>
-      {showScoreDropDown && <ScoreDropDown />}
+      >
+        {showScoreDropDown && <ScoreDropDown />}
+      </CombatantDetails>
 
       <CombatantDetails text="" />
       <Button

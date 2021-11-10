@@ -36,6 +36,13 @@ const CombatantContextProvider = (props) => {
     setCombatantList([]);
   };
 
+  const handleTypeChange = (combatantType, combatantRowColor, index) => {
+    const updatedCombatantList = cloneDeep(combatantList);
+    updatedCombatantList[index].combatantType = combatantType;
+    updatedCombatantList[index].combatantRowColor = combatantRowColor;
+    setCombatantList(updatedCombatantList);
+  };
+
   return (
     <CombatantContext.Provider
       value={{
@@ -47,6 +54,7 @@ const CombatantContextProvider = (props) => {
         combatantList,
         combatantRowColor,
         handleClearCombatants,
+        handleTypeChange,
       }}
     >
       {props.children}

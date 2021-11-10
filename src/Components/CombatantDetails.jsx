@@ -15,9 +15,12 @@ const StyledCombatantDetails = styled.p`
   }
 `;
 
-const CombatantDetails = ({ text, onClick }) => {
+const CombatantDetails = ({ text, onClick, children }) => {
   return (
-    <StyledCombatantDetails onClick={onClick}>{text}</StyledCombatantDetails>
+    <StyledCombatantDetails onClick={onClick}>
+      {children}
+      {text}
+    </StyledCombatantDetails>
   );
 };
 
