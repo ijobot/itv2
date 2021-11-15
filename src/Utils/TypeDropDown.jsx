@@ -14,26 +14,30 @@ const StyledTypeDropDown = styled.div`
   border: 2px solid #6a5d83;
 `;
 
-const TypeDropDown = ({ index }) => {
+const TypeDropDown = ({ index, setShowTypeDropDown }) => {
   const { handleTypeChange } = useContext(CombatantContext);
+  const handleOnClick = (type, color) => {
+    handleTypeChange(type, color, index);
+    setShowTypeDropDown(false);
+  };
   return (
     <StyledTypeDropDown>
       <Button
         text="Player"
         color="#8CBA80"
-        onClick={() => handleTypeChange("Player", "#8CBA80", index)}
+        onClick={() => handleOnClick("Player", "#8CBA80")}
         marginButton
       />
       <Button
         text="Monster"
         color="#DA4167"
-        onClick={() => handleTypeChange("Monster", "#DA4167", index)}
+        onClick={() => handleOnClick("Monster", "#DA4167")}
         marginButton
       />
       <Button
         text="NPC"
         color="#2E86AB"
-        onClick={() => handleTypeChange("NPC", "#2E86AB", index)}
+        onClick={() => handleOnClick("NPC", "#2E86AB")}
         marginButton
       />
     </StyledTypeDropDown>

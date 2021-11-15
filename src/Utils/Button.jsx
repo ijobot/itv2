@@ -10,7 +10,6 @@ const StyledButton = styled.button`
   font-weight: bold;
   padding: ${({ small }) => (small ? "0.25rem" : ".85rem")};
   cursor: pointer;
-  display: block;
   min-width: ${({ small }) => (small ? "2rem" : "100%")};
   line-height: 1;
   box-sizing: border-box;

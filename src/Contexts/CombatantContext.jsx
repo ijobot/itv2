@@ -36,10 +36,22 @@ const CombatantContextProvider = (props) => {
     setCombatantList([]);
   };
 
-  const handleTypeChange = (combatantType, combatantRowColor, index) => {
+  const handleTypeChange = (newType, newRowColor, index) => {
     const updatedCombatantList = cloneDeep(combatantList);
-    updatedCombatantList[index].combatantType = combatantType;
-    updatedCombatantList[index].combatantRowColor = combatantRowColor;
+    updatedCombatantList[index].combatantType = newType;
+    updatedCombatantList[index].combatantRowColor = newRowColor;
+    setCombatantList(updatedCombatantList);
+  };
+
+  const handleNameChange = (newName, index) => {
+    const updatedCombatantList = cloneDeep(combatantList);
+    updatedCombatantList[index].name = newName;
+    setCombatantList(updatedCombatantList);
+  };
+
+  const handleScoreChange = (newScore, index) => {
+    const updatedCombatantList = cloneDeep(combatantList);
+    updatedCombatantList[index].score = newScore;
     setCombatantList(updatedCombatantList);
   };
 
@@ -55,6 +67,8 @@ const CombatantContextProvider = (props) => {
         combatantRowColor,
         handleClearCombatants,
         handleTypeChange,
+        handleNameChange,
+        handleScoreChange,
       }}
     >
       {props.children}

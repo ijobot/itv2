@@ -27,7 +27,7 @@ const ScoreDropDown = ({ index }) => {
     <Button
       style={{ marginBottom: "0rem" }}
       text={option}
-      onClick={() => handleScoreChange(index)}
+      onClick={() => handleScoreChange(option, index)}
       color="#6a5d83"
       small
     />

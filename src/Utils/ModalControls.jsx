@@ -42,13 +42,13 @@ const ModalControls = () => {
           color="#6a5d83"
           text="Submit"
           onClick={(e) => handleCombatantSubmit(e)}
-          modalButton
+          marginButton
         />
         <Button
           color="#6a5d83"
           text="Cancel"
           onClick={handleCloseModal}
-          modalButton
+          marginButton
         />
       </div>
     </StyledModalControls>
