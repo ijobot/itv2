@@ -8,7 +8,6 @@ import MenuDisplay from "./Components/MenuDisplay";
 import CombatDisplay from "./Components/CombatDisplay";
 
 import { ModalContextProvider } from "./Contexts/ModalContext";
-// import { DropDownContextProvider } from "./Contexts/DropDownContext";
 import { CombatantContextProvider } from "./Contexts/CombatantContext";
 
 const StyledApp = styled.div`

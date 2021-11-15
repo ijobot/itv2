@@ -62,9 +62,8 @@ const CombatantContextProvider = (props) => {
     const updatedCombatantList = cloneDeep(combatantList);
     updatedCombatantList[index].showType = value;
     setCombatantList(updatedCombatantList);
-    console.log("Updated:");
-    console.log(updatedCombatantList);
-    console.log("Actual:" + combatantList);
+    console.log("UpdatedList:" + updatedCombatantList[index].showType);
+    console.log("ActualList:" + combatantList[index].showType);
   };
 
   const handleNameChange = (newName, index) => {

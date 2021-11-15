@@ -40,9 +40,8 @@ const CombatantRow = ({ combatantData, index }) => {
   const handleTypeDropDowns = () => {
     handleTypeChanging(true, index)
     setShowTypeDropDown(true)
-    console.log(combatantList[index].showType)
-    console.log(combatantList[index])
-    handleDropDowns()
+    // console.log(combatantList[index].showType)
+    // console.log(combatantList[index])
   }
 
   return (
