@@ -21,7 +21,7 @@ const StyledNameDropDown = styled.div`
 const NameDropDown = ({ index }) => {
   const [input, setInput] = useState("");
 
-  const { handleNameChange, name } = useContext(CombatantContext);
+  const { handleNameChange } = useContext(CombatantContext);
   return (
     <StyledNameDropDown>
       <Input

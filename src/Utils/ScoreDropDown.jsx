@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { CombatantContext } from "../Contexts/CombatantContext";
+import { DropDownContext } from "../Contexts/DropDownContext";
 import Button from "./Button";
 
 const StyledScoreDropDown = styled.div`
@@ -19,15 +20,21 @@ const StyledScoreDropDown = styled.div`
 
 const ScoreDropDown = ({ index }) => {
   const { handleScoreChange } = useContext(CombatantContext);
+  const { setShowScoreDropDown } = useContext(DropDownContext)
   const scoreOptions = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
+  const handleOnClick = (option) => {
+    handleScoreChange(option, index);
+    setShowScoreDropDown(false);
+  }
   const optionsMap = scoreOptions.map((option) => (
     <Button
+      key={option}
       style={{ marginBottom: "0rem" }}
       text={option}
-      onClick={() => handleScoreChange(option, index)}
+      onClick={() => handleOnClick(option)}
       color="#6a5d83"
       small
     />

@@ -12,11 +12,12 @@ const StyledCombatants = styled.div`
 
 const Combatants = () => {
   const { combatantList } = useContext(CombatantContext);
+
   const combatantListMap = combatantList.map((combatantData, index) => (
     <CombatantRow
       combatantData={combatantData}
       index={index}
-      key={combatantData.name + combatantData.score}
+      key={Math.floor(Math.random()* 100000)}
     />
   ));
 
@@ -24,6 +25,7 @@ const Combatants = () => {
     combatantList.sort((a, b) => {
       return b.score - a.score;
     });
+
   };
 
   sortList();

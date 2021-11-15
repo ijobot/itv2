@@ -9,13 +9,27 @@ const CombatantContextProvider = (props) => {
   const [score, setScore] = useState("");
   const [combatantList, setCombatantList] = useState([]);
 
+  if (score !== score) {
+    setScore("Set Score!");
+  } else if (score === "") {
+    setScore("Set Score!");
+  }
+
+  if (name === "") {
+    setName("Set Name!");
+  }
+
   const { handleCloseModal, combatantType, combatantRowColor } =
     useContext(ModalContext);
 
+  const showType = false
+
   const handleCombatantSubmit = (e) => {
     e.preventDefault();
-    const newCombatant = { combatantType, name, score, combatantRowColor };
+    const newCombatant = { combatantType, name, score, combatantRowColor, showType };
     addCombatant(newCombatant);
+    setName("")
+    setScore("")
     handleCloseModal();
   };
 
@@ -40,13 +54,19 @@ const CombatantContextProvider = (props) => {
     const updatedCombatantList = cloneDeep(combatantList);
     updatedCombatantList[index].combatantType = newType;
     updatedCombatantList[index].combatantRowColor = newRowColor;
+    updatedCombatantList[index].showType = false;
     setCombatantList(updatedCombatantList);
   };
 
   const handleNameChange = (newName, index) => {
     const updatedCombatantList = cloneDeep(combatantList);
+    if (newName === "") {
+      updatedCombatantList[index].name = "Set Name!";
+      setCombatantList(updatedCombatantList);
+    } else {
     updatedCombatantList[index].name = newName;
     setCombatantList(updatedCombatantList);
+    };
   };
 
   const handleScoreChange = (newScore, index) => {

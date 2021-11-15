@@ -32,7 +32,7 @@ const ModalControls = () => {
           value={score}
           pattern="[0-9]*"
           onChange={(e) =>
-            setScore(parseInt(e.target.value.split(/\D/).join("")))
+          setScore(parseInt(e.target.value.split(/\D/).join("")))
           }
         />
       </div>

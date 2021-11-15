@@ -17,12 +17,13 @@ const StyledInput = styled.input`
   }
 `;
 
-const Input = ({ type, placeholder, value, onChange }) => {
+const Input = ({ type, placeholder, value, onChange, pattern }) => {
   return (
     <StyledInput
       type={type}
       placeholder={placeholder}
       value={value}
+      pattern={pattern}
       onChange={onChange}
     />
   );

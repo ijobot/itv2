@@ -20,11 +20,29 @@ const StyledCombatantRow = styled.div`
 `;
 
 const CombatantRow = ({ combatantData, index }) => {
-  const { removeCombatant } = useContext(CombatantContext);
+  const { removeCombatant, combatantList } = useContext(CombatantContext);
+  const [ showTypeDropDown, setShowTypeDropDown ] = useState(false)
+  const [ showScoreDropDown, setShowScoreDropDown ] = useState(false)
+  const [ showNameDropDown, setShowNameDropDown ] = useState(false)
 
-  const [showTypeDropDown, setShowTypeDropDown] = useState(false);
-  const [showNameDropDown, setShowNameDropDown] = useState(false);
-  const [showScoreDropDown, setShowScoreDropDown] = useState(false);
+  const handleDropDowns = () => {
+    combatantList.forEach(closeOtherDropDowns) 
+  } 
+
+  const closeOtherDropDowns = () => {
+    if (!combatantList.showType) {
+      combatantList.showType = false
+      console.log(combatantList)
+    }
+  }
+
+  const handleTypeDropDowns = index => {
+    combatantList[index].showType = true
+    handleDropDowns()
+    setShowTypeDropDown(true)
+  }
+
+  console.log(combatantList[index].showType)
 
   return (
     <StyledCombatantRow
@@ -33,7 +51,8 @@ const CombatantRow = ({ combatantData, index }) => {
     >
       <CombatantDetails
         text={combatantData.combatantType}
-        onClick={() => setShowTypeDropDown(!showTypeDropDown)}
+        onClick={() => handleTypeDropDowns(index)}
+        index={index}
       >
         {showTypeDropDown && (
           <TypeDropDown
@@ -45,14 +64,14 @@ const CombatantRow = ({ combatantData, index }) => {
 
       <CombatantDetails
         text={combatantData.name}
-        onClick={() => setShowNameDropDown(!showNameDropDown)}
+        onClick={() => setShowNameDropDown(true)}
       >
         {showNameDropDown && <NameDropDown index={index} />}
       </CombatantDetails>
 
       <CombatantDetails
         text={combatantData.score}
-        onClick={() => setShowScoreDropDown(!showScoreDropDown)}
+        onClick={() => setShowScoreDropDown(true)}
       >
         {showScoreDropDown && <ScoreDropDown index={index} />}
       </CombatantDetails>

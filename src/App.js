@@ -8,6 +8,7 @@ import MenuDisplay from "./Components/MenuDisplay";
 import CombatDisplay from "./Components/CombatDisplay";
 
 import { ModalContextProvider } from "./Contexts/ModalContext";
+// import { DropDownContextProvider } from "./Contexts/DropDownContext";
 import { CombatantContextProvider } from "./Contexts/CombatantContext";
 
 const StyledApp = styled.div`
@@ -27,14 +28,14 @@ const StyledApp = styled.div`
 function App() {
   return (
     <ModalContextProvider>
-      <CombatantContextProvider>
-        <StyledApp>
-          <Modal />
-          <MainTitle />
-          <MenuDisplay />
-          <CombatDisplay />
-        </StyledApp>
-      </CombatantContextProvider>
+        <CombatantContextProvider>
+          <StyledApp>
+            <Modal />
+            <MainTitle />
+            <MenuDisplay />
+            <CombatDisplay />
+          </StyledApp>
+        </CombatantContextProvider>
     </ModalContextProvider>
   );
 }
