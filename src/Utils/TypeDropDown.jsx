@@ -15,15 +15,14 @@ const StyledTypeDropDown = styled.div`
 `;
 
 const TypeDropDown = ({ index, setShowTypeDropDown }) => {
-  const { handleTypeChange, combatantList } = useContext(CombatantContext);
+  const { handleTypeChange, combatantList, handleTypeChanging } = useContext(CombatantContext);
 
-  if (!combatantList[index].showType) {
-    setShowTypeDropDown(false)
-  }
-  
   const handleOnClick = (type, color) => {
+    handleTypeChanging(false, index)
     handleTypeChange(type, color, index);
     setShowTypeDropDown(false);
+    // console.log(combatantList[index].showType)
+    // console.log(combatantList[index])
 
   };
   return (

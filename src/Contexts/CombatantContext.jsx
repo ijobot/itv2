@@ -58,6 +58,15 @@ const CombatantContextProvider = (props) => {
     setCombatantList(updatedCombatantList);
   };
 
+  const handleTypeChanging = (value, index) => {
+    const updatedCombatantList = cloneDeep(combatantList);
+    updatedCombatantList[index].showType = value;
+    setCombatantList(updatedCombatantList);
+    console.log("Updated:");
+    console.log(updatedCombatantList);
+    console.log("Actual:" + combatantList);
+  };
+
   const handleNameChange = (newName, index) => {
     const updatedCombatantList = cloneDeep(combatantList);
     if (newName === "") {
@@ -89,6 +98,7 @@ const CombatantContextProvider = (props) => {
         handleTypeChange,
         handleNameChange,
         handleScoreChange,
+        handleTypeChanging,
       }}
     >
       {props.children}

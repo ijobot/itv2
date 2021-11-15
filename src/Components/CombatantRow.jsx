@@ -20,14 +20,15 @@ const StyledCombatantRow = styled.div`
 `;
 
 const CombatantRow = ({ combatantData, index }) => {
-  const { removeCombatant, combatantList } = useContext(CombatantContext);
-  const [ showTypeDropDown, setShowTypeDropDown ] = useState(false)
+  const { removeCombatant, combatantList, handleTypeChanging } = useContext(CombatantContext);
+  const [ showTypeDropDown, setShowTypeDropDown ] = useState(combatantList[index].showType)
   const [ showScoreDropDown, setShowScoreDropDown ] = useState(false)
   const [ showNameDropDown, setShowNameDropDown ] = useState(false)
 
   const handleDropDowns = () => {
-    combatantList.forEach(closeOtherDropDowns) 
-  } 
+    combatantList.forEach((x, index) => combatantList[index].showType = false)
+    }
+   
 
   const closeOtherDropDowns = () => {
     if (!combatantList.showType) {
@@ -36,13 +37,13 @@ const CombatantRow = ({ combatantData, index }) => {
     }
   }
 
-  const handleTypeDropDowns = index => {
-    combatantList[index].showType = true
-    handleDropDowns()
+  const handleTypeDropDowns = () => {
+    handleTypeChanging(true, index)
     setShowTypeDropDown(true)
+    console.log(combatantList[index].showType)
+    console.log(combatantList[index])
+    handleDropDowns()
   }
-
-  console.log(combatantList[index].showType)
 
   return (
     <StyledCombatantRow
@@ -51,7 +52,7 @@ const CombatantRow = ({ combatantData, index }) => {
     >
       <CombatantDetails
         text={combatantData.combatantType}
-        onClick={() => handleTypeDropDowns(index)}
+        onClick={() => handleTypeDropDowns()}
         index={index}
       >
         {showTypeDropDown && (
