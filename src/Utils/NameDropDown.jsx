@@ -6,10 +6,10 @@ import { CombatantContext } from "../Contexts/CombatantContext";
 
 const StyledNameDropDown = styled.div`
   position: absolute;
-  top: 110%;
-  left: 50%;
+  top: 90%;
+  left: 40%;
   transform: translateX(-50%);
-  min-width: 300%;
+  width: 40%;
   padding: 0.5rem;
   z-index: 10;
   background-color: #0c0122;
@@ -18,10 +18,15 @@ const StyledNameDropDown = styled.div`
   grid-template-columns: 2fr 1fr;
 `;
 
-const NameDropDown = ({ index }) => {
+const NameDropDown = ({ index, setShowNameDropDown, showNameDropDown }) => {
   const [input, setInput] = useState("");
 
   const { handleNameChange } = useContext(CombatantContext);
+
+  const handleOnClick = (input, index) => {
+    handleNameChange(input, index);
+    setShowNameDropDown(!showNameDropDown);
+  };
   return (
     <StyledNameDropDown>
       <Input
@@ -33,7 +38,7 @@ const NameDropDown = ({ index }) => {
       <Button
         color="#6a5d83"
         text="Done"
-        onClick={() => handleNameChange(input, index)}
+        onClick={() => handleOnClick(input, index)}
       />
     </StyledNameDropDown>
   );

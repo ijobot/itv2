@@ -17,6 +17,7 @@ const StyledModal = styled.div`
   display: grid;
   grid-template-columns: 2fr 1rem 1fr;
   grid-template-rows: auto 1rem auto auto;
+  z-index: 20;
 `;
 
 const Modal = () => {

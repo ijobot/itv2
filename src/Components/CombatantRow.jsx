@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import { CombatantContext } from "../Contexts/CombatantContext";
 import Button from "../Utils/Button";
@@ -8,6 +8,7 @@ import NameDropDown from "../Utils/NameDropDown";
 import ScoreDropDown from "../Utils/ScoreDropDown";
 
 const StyledCombatantRow = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 0.4fr auto;
   align-items: center;
@@ -20,61 +21,106 @@ const StyledCombatantRow = styled.div`
 `;
 
 const CombatantRow = ({ combatantData, index }) => {
-  const { removeCombatant, combatantList, handleTypeChanging } = useContext(CombatantContext);
-  const [ showTypeDropDown, setShowTypeDropDown ] = useState(combatantList[index].showType)
-  const [ showScoreDropDown, setShowScoreDropDown ] = useState(false)
-  const [ showNameDropDown, setShowNameDropDown ] = useState(false)
+  const { removeCombatant } = useContext(CombatantContext);
+  const [showTypeDropDown, setShowTypeDropDown] = useState(false);
+  const [showScoreDropDown, setShowScoreDropDown] = useState(false);
+  const [showNameDropDown, setShowNameDropDown] = useState(false);
 
-  const handleDropDowns = () => {
-    combatantList.forEach((x, index) => combatantList[index].showType = false)
-    }
-   
+  const refs = useRef([]);
 
-  const closeOtherDropDowns = () => {
-    if (!combatantList.showType) {
-      combatantList.showType = false
-      console.log(combatantList)
-    }
-  }
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (
+        showTypeDropDown &&
+        refs.current &&
+        !refs.current[0].contains(e.target)
+      )
+        setShowTypeDropDown(false);
+    };
 
-  const handleTypeDropDowns = () => {
-    handleTypeChanging(true, index)
-    setShowTypeDropDown(true)
-    // console.log(combatantList[index].showType)
-    // console.log(combatantList[index])
-  }
+    document.addEventListener("click", checkIfClickedOutside);
+    return () => {
+      document.removeEventListener("click", checkIfClickedOutside);
+    };
+  }, [showTypeDropDown]);
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (
+        showNameDropDown &&
+        refs.current &&
+        !refs.current[1].contains(e.target)
+      )
+        setShowNameDropDown(false);
+    };
+
+    document.addEventListener("click", checkIfClickedOutside);
+    return () => {
+      document.removeEventListener("click", checkIfClickedOutside);
+    };
+  }, [showNameDropDown]);
+
+  useEffect(() => {
+    const checkIfClickedOutside = (e) => {
+      if (
+        showScoreDropDown &&
+        refs.current &&
+        !refs.current[2].contains(e.target)
+      )
+        setShowScoreDropDown(false);
+    };
+
+    document.addEventListener("click", checkIfClickedOutside);
+    return () => {
+      document.removeEventListener("click", checkIfClickedOutside);
+    };
+  }, [showScoreDropDown]);
 
   return (
     <StyledCombatantRow
       style={{ backgroundColor: combatantData.combatantRowColor }}
       index={index}
+      ref={(element) => {
+        refs.current[index] = element;
+      }}
     >
       <CombatantDetails
         text={combatantData.combatantType}
-        onClick={() => handleTypeDropDowns()}
+        onClick={() => setShowTypeDropDown(true)}
         index={index}
-      >
-        {showTypeDropDown && (
-          <TypeDropDown
-            index={index}
-            setShowTypeDropDown={setShowTypeDropDown}
-          />
-        )}
-      </CombatantDetails>
+      ></CombatantDetails>
+      {showTypeDropDown && (
+        <TypeDropDown
+          index={index}
+          setShowTypeDropDown={setShowTypeDropDown}
+          showTypeDropDown={showTypeDropDown}
+        />
+      )}
 
       <CombatantDetails
         text={combatantData.name}
         onClick={() => setShowNameDropDown(true)}
-      >
-        {showNameDropDown && <NameDropDown index={index} />}
-      </CombatantDetails>
+        index={index}
+      ></CombatantDetails>
+      {showNameDropDown && (
+        <NameDropDown
+          index={index}
+          setShowNameDropDown={setShowNameDropDown}
+          showNameDropDown={showNameDropDown}
+        />
+      )}
 
       <CombatantDetails
         text={combatantData.score}
         onClick={() => setShowScoreDropDown(true)}
-      >
-        {showScoreDropDown && <ScoreDropDown index={index} />}
-      </CombatantDetails>
+      ></CombatantDetails>
+      {showScoreDropDown && (
+        <ScoreDropDown
+          index={index}
+          setShowScoreDropDown={setShowScoreDropDown}
+          showScoreDropDown={showScoreDropDown}
+        />
+      )}
 
       <CombatantDetails />
 

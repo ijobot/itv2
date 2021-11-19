@@ -22,14 +22,12 @@ const CombatantContextProvider = (props) => {
   const { handleCloseModal, combatantType, combatantRowColor } =
     useContext(ModalContext);
 
-  const showType = false
-
   const handleCombatantSubmit = (e) => {
     e.preventDefault();
-    const newCombatant = { combatantType, name, score, combatantRowColor, showType };
+    const newCombatant = { combatantType, name, score, combatantRowColor };
     addCombatant(newCombatant);
-    setName("")
-    setScore("")
+    setName("");
+    setScore("");
     handleCloseModal();
   };
 
@@ -54,16 +52,7 @@ const CombatantContextProvider = (props) => {
     const updatedCombatantList = cloneDeep(combatantList);
     updatedCombatantList[index].combatantType = newType;
     updatedCombatantList[index].combatantRowColor = newRowColor;
-    updatedCombatantList[index].showType = false;
     setCombatantList(updatedCombatantList);
-  };
-
-  const handleTypeChanging = (value, index) => {
-    const updatedCombatantList = cloneDeep(combatantList);
-    updatedCombatantList[index].showType = value;
-    setCombatantList(updatedCombatantList);
-    console.log("UpdatedList:" + updatedCombatantList[index].showType);
-    console.log("ActualList:" + combatantList[index].showType);
   };
 
   const handleNameChange = (newName, index) => {
@@ -72,9 +61,9 @@ const CombatantContextProvider = (props) => {
       updatedCombatantList[index].name = "Set Name!";
       setCombatantList(updatedCombatantList);
     } else {
-    updatedCombatantList[index].name = newName;
-    setCombatantList(updatedCombatantList);
-    };
+      updatedCombatantList[index].name = newName;
+      setCombatantList(updatedCombatantList);
+    }
   };
 
   const handleScoreChange = (newScore, index) => {
@@ -97,7 +86,6 @@ const CombatantContextProvider = (props) => {
         handleTypeChange,
         handleNameChange,
         handleScoreChange,
-        handleTypeChanging,
       }}
     >
       {props.children}

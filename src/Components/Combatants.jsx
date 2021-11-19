@@ -17,7 +17,7 @@ const Combatants = () => {
     <CombatantRow
       combatantData={combatantData}
       index={index}
-      key={Math.floor(Math.random()* 100000)}
+      key={Math.floor(Math.random() * 100000)}
     />
   ));
 
@@ -25,14 +25,13 @@ const Combatants = () => {
     combatantList.sort((a, b) => {
       return b.score - a.score;
     });
-
   };
 
   sortList();
 
   useEffect(() => {
     return combatantListMap;
-  });
+  }, [combatantList]);
 
   return <StyledCombatants>{combatantListMap}</StyledCombatants>;
 };
