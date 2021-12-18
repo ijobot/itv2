@@ -32,8 +32,8 @@ const CombatantRow = ({ combatantData, index }) => {
     const checkIfClickedOutside = (e) => {
       if (
         showTypeDropDown &&
-        refs.current &&
-        !refs.current[0].contains(e.target)
+        refs.current 
+        // && !refs.current[0].contains(e.target)
       )
         setShowTypeDropDown(false);
     };
@@ -48,8 +48,8 @@ const CombatantRow = ({ combatantData, index }) => {
     const checkIfClickedOutside = (e) => {
       if (
         showNameDropDown &&
-        refs.current &&
-        !refs.current[1].contains(e.target)
+        refs.current 
+        && !refs.current[1].contains(e.target)
       )
         setShowNameDropDown(false);
     };
@@ -64,8 +64,8 @@ const CombatantRow = ({ combatantData, index }) => {
     const checkIfClickedOutside = (e) => {
       if (
         showScoreDropDown &&
-        refs.current &&
-        !refs.current[2].contains(e.target)
+        refs.current 
+        // && !refs.current[2].contains(e.target)
       )
         setShowScoreDropDown(false);
     };
