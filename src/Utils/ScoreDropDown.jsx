@@ -6,8 +6,8 @@ import Button from "./Button";
 
 const StyledScoreDropDown = styled.div`
   position: absolute;
-  top: 90%;
-  left: 67.3%;
+  top: 110%;
+  left: 50%;
   transform: translateX(-50%);
   padding: 0.5rem;
   z-index: 10;
@@ -18,16 +18,20 @@ const StyledScoreDropDown = styled.div`
   gap: 0.5rem;
 `;
 
-const ScoreDropDown = ({ index, setShowScoreDropDown, showScoreDropDown }) => {
+const ScoreDropDown = ({ index }) => {
+  const { ShowScoreDropDown, setShowScoreDropDown } = useContext(DropDownContext);
   const { handleScoreChange } = useContext(CombatantContext);
+
+  // const ShowScoreDropDown = useContext(DropDownContext);
   const scoreOptions = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
     22, 23, 24, 25, 26, 27, 28, 29, 30,
   ];
+  console.log(ShowScoreDropDown)
   const handleOnClick = (option) => {
     handleScoreChange(option, index);
-    setShowScoreDropDown(!showScoreDropDown);
-  };
+    setShowScoreDropDown(false);
+  }
   const optionsMap = scoreOptions.map((option) => (
     <Button
       key={option}

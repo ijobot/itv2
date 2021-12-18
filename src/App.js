@@ -9,6 +9,7 @@ import CombatDisplay from "./Components/CombatDisplay";
 
 import { ModalContextProvider } from "./Contexts/ModalContext";
 import { CombatantContextProvider } from "./Contexts/CombatantContext";
+import { DropDownContextProvider } from "./Contexts/DropDownContext";
 
 const StyledApp = styled.div`
   display: grid;
@@ -28,12 +29,14 @@ function App() {
   return (
     <ModalContextProvider>
         <CombatantContextProvider>
+          <DropDownContextProvider>
           <StyledApp>
             <Modal />
             <MainTitle />
             <MenuDisplay />
             <CombatDisplay />
           </StyledApp>
+          </DropDownContextProvider>
         </CombatantContextProvider>
     </ModalContextProvider>
   );
