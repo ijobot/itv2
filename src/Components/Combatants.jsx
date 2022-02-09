@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { CombatantContext } from "../Contexts/CombatantContext";
 import CombatantRow from "./CombatantRow";
@@ -28,10 +28,6 @@ const Combatants = () => {
   };
 
   sortList();
-
-  useEffect(() => {
-    return combatantListMap;
-  }, [combatantList]);
 
   return <StyledCombatants>{combatantListMap}</StyledCombatants>;
 };

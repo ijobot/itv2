@@ -25,7 +25,7 @@ const NameDropDown = ({ index, setShowNameDropDown, showNameDropDown }) => {
 
   const handleOnClick = (input, index) => {
     handleNameChange(input, index);
-    setShowNameDropDown(!showNameDropDown);
+    setShowNameDropDown(false);
   };
   return (
     <StyledNameDropDown>

@@ -26,14 +26,32 @@ const CombatantRow = ({ combatantData, index }) => {
   const [showScoreDropDown, setShowScoreDropDown] = useState(false);
   const [showNameDropDown, setShowNameDropDown] = useState(false);
 
-  const refs = useRef([]);
+  let refs = useRef([]);
+
+  const handleTypeOpen = () => {
+    setShowTypeDropDown(true);
+    setShowScoreDropDown(false);
+    setShowNameDropDown(false);
+  };
+
+  const handleNameOpen = () => {
+    setShowTypeDropDown(false);
+    setShowScoreDropDown(false);
+    setShowNameDropDown(true);
+  };
+
+  const handleScoreOpen = () => {
+    setShowTypeDropDown(false);
+    setShowScoreDropDown(true);
+    setShowNameDropDown(false);
+  };
 
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
       if (
         showTypeDropDown &&
-        refs.current 
-        // && !refs.current[0].contains(e.target)
+        refs.current && 
+        !refs.current?.contains(e.target)
       )
         setShowTypeDropDown(false);
     };
@@ -48,8 +66,8 @@ const CombatantRow = ({ combatantData, index }) => {
     const checkIfClickedOutside = (e) => {
       if (
         showNameDropDown &&
-        refs.current 
-        && !refs.current[1].contains(e.target)
+        refs.current && 
+        !refs.current?.contains(e.target)
       )
         setShowNameDropDown(false);
     };
@@ -61,13 +79,13 @@ const CombatantRow = ({ combatantData, index }) => {
   }, [showNameDropDown]);
 
   useEffect(() => {
-    const checkIfClickedOutside = (e) => {
+    let checkIfClickedOutside = (e) => {
       if (
         showScoreDropDown &&
-        refs.current 
-        // && !refs.current[2].contains(e.target)
+        refs.current &&
+        !refs.current?.contains(e.target)
       )
-        setShowScoreDropDown(false);
+        setShowScoreDropDown(false); 
     };
 
     document.addEventListener("click", checkIfClickedOutside);
@@ -81,12 +99,12 @@ const CombatantRow = ({ combatantData, index }) => {
       style={{ backgroundColor: combatantData.combatantRowColor }}
       index={index}
       ref={(element) => {
-        refs.current[index] = element;
+        refs.current = element; //[index]
       }}
     >
       <CombatantDetails
         text={combatantData.combatantType}
-        onClick={() => setShowTypeDropDown(true)}
+        onClick={handleTypeOpen} //() => 
         index={index}
       ></CombatantDetails>
       {showTypeDropDown && (
@@ -99,7 +117,7 @@ const CombatantRow = ({ combatantData, index }) => {
 
       <CombatantDetails
         text={combatantData.name}
-        onClick={() => setShowNameDropDown(true)}
+        onClick={handleNameOpen} //() => 
         index={index}
       ></CombatantDetails>
       {showNameDropDown && (
@@ -112,7 +130,7 @@ const CombatantRow = ({ combatantData, index }) => {
 
       <CombatantDetails
         text={combatantData.score}
-        onClick={() => setShowScoreDropDown(true)}
+        onClick={handleScoreOpen} //() => 
       ></CombatantDetails>
       {showScoreDropDown && (
         <ScoreDropDown
