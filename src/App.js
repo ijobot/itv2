@@ -10,34 +10,35 @@ import CombatDisplay from "./Components/CombatDisplay";
 import { ModalContextProvider } from "./Contexts/ModalContext";
 import { CombatantContextProvider } from "./Contexts/CombatantContext";
 import { DropDownContextProvider } from "./Contexts/DropDownContext";
+import stones from "../src/img/stones.jpg";
 
 const StyledApp = styled.div`
   display: grid;
-  grid-template-columns: 3rem 1fr 3rem 4fr 3rem;
-  grid-template-rows: 3rem auto 3rem 1fr 3rem;
+  grid-template-columns: 6rem 1fr 2rem 3.5fr 6rem;
+  grid-template-rows: 2rem auto 2rem 1fr 2rem;
   text-align: center;
   min-height: 100vh;
-  background-color: #4f4066;
-  background-image: url(https://p2.piqsels.com/preview/532/313/113/texture-concrete-grey-stone.jpg);
+  background-color: var(--borderColor);
+  background-image: url(${stones});
   background-repeat: no-repeat;
   background-size: cover;
-  background-blend-mode: multiply;
   font-size: 1rem;
+  background-blend-mode: multiply;
 `;
 
 function App() {
   return (
     <ModalContextProvider>
-        <CombatantContextProvider>
-          <DropDownContextProvider>
+      <CombatantContextProvider>
+        <DropDownContextProvider>
           <StyledApp>
             <Modal />
             <MainTitle />
             <MenuDisplay />
             <CombatDisplay />
           </StyledApp>
-          </DropDownContextProvider>
-        </CombatantContextProvider>
+        </DropDownContextProvider>
+      </CombatantContextProvider>
     </ModalContextProvider>
   );
 }

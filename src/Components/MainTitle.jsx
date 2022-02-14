@@ -4,13 +4,13 @@ import styled from "styled-components";
 const StyledMainTitle = styled.h1`
   grid-column-start: 2;
   grid-row-start: 2;
-  font-size: 3rem;
-  font-weight: bold;
-  color: #6a5d83;
-  line-height: 1.2;
-  background-color: #0c0122;
-  border: 2px solid #6a5d83;
-  padding: 0.5rem;
+  font-size: 4rem;
+  letter-spacing: -2px;
+  color: var(--borderColor);
+  line-height: 0.9;
+  background-color: var(--boxColor);
+  border: var(--border);
+  padding: 0.65rem 0.8rem;
 `;
 
 const MainTitle = () => {

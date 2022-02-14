@@ -10,13 +10,20 @@ import ScoreDropDown from "../Utils/ScoreDropDown";
 const StyledCombatantRow = styled.div`
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 0.4fr auto;
+  grid-template-columns: 1fr 1fr 1fr 40px;
   align-items: center;
   padding: 0.5rem;
-  border: 2px solid rgba(0, 0, 0, 0.3);
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  transition: 150ms ease-in;
 
   &:not(:last-of-type) {
     margin-bottom: 0.5rem;
+  }
+
+  &:hover,
+  &: focus {
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
   }
 `;
 
@@ -29,7 +36,7 @@ const CombatantRow = ({ combatantData, index }) => {
   let refs = useRef([]);
 
   const handleTypeOpen = () => {
-    setShowTypeDropDown(true);
+    setShowTypeDropDown(!showTypeDropDown);
     setShowScoreDropDown(false);
     setShowNameDropDown(false);
   };
@@ -37,22 +44,18 @@ const CombatantRow = ({ combatantData, index }) => {
   const handleNameOpen = () => {
     setShowTypeDropDown(false);
     setShowScoreDropDown(false);
-    setShowNameDropDown(true);
+    setShowNameDropDown(!showNameDropDown);
   };
 
   const handleScoreOpen = () => {
     setShowTypeDropDown(false);
-    setShowScoreDropDown(true);
+    setShowScoreDropDown(!showScoreDropDown);
     setShowNameDropDown(false);
   };
 
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
-      if (
-        showTypeDropDown &&
-        refs.current && 
-        !refs.current?.contains(e.target)
-      )
+      if (showTypeDropDown && refs.current && !refs.current?.contains(e.target))
         setShowTypeDropDown(false);
     };
 
@@ -64,11 +67,7 @@ const CombatantRow = ({ combatantData, index }) => {
 
   useEffect(() => {
     const checkIfClickedOutside = (e) => {
-      if (
-        showNameDropDown &&
-        refs.current && 
-        !refs.current?.contains(e.target)
-      )
+      if (showNameDropDown && refs.current && !refs.current?.contains(e.target))
         setShowNameDropDown(false);
     };
 
@@ -85,7 +84,7 @@ const CombatantRow = ({ combatantData, index }) => {
         refs.current &&
         !refs.current?.contains(e.target)
       )
-        setShowScoreDropDown(false); 
+        setShowScoreDropDown(false);
     };
 
     document.addEventListener("click", checkIfClickedOutside);
@@ -94,57 +93,59 @@ const CombatantRow = ({ combatantData, index }) => {
     };
   }, [showScoreDropDown]);
 
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   return (
     <StyledCombatantRow
       style={{ backgroundColor: combatantData.combatantRowColor }}
       index={index}
       ref={(element) => {
-        refs.current = element; //[index]
+        refs.current = element;
       }}
     >
       <CombatantDetails
         text={combatantData.combatantType}
-        onClick={handleTypeOpen} //() => 
+        onClick={handleTypeOpen}
         index={index}
-      ></CombatantDetails>
-      {showTypeDropDown && (
-        <TypeDropDown
-          index={index}
-          setShowTypeDropDown={setShowTypeDropDown}
-          showTypeDropDown={showTypeDropDown}
-        />
-      )}
+      >
+        {showTypeDropDown && (
+          <TypeDropDown
+            index={index}
+            setShowTypeDropDown={setShowTypeDropDown}
+            showTypeDropDown={showTypeDropDown}
+          />
+        )}
+      </CombatantDetails>
 
       <CombatantDetails
-        text={combatantData.name}
-        onClick={handleNameOpen} //() => 
+        text={capitalizeFirstLetter(combatantData.name)}
+        onClick={handleNameOpen}
         index={index}
-      ></CombatantDetails>
-      {showNameDropDown && (
-        <NameDropDown
-          index={index}
-          setShowNameDropDown={setShowNameDropDown}
-          showNameDropDown={showNameDropDown}
-        />
-      )}
+      >
+        {showNameDropDown && (
+          <NameDropDown
+            index={index}
+            setShowNameDropDown={setShowNameDropDown}
+            showNameDropDown={showNameDropDown}
+          />
+        )}
+      </CombatantDetails>
 
-      <CombatantDetails
-        text={combatantData.score}
-        onClick={handleScoreOpen} //() => 
-      ></CombatantDetails>
-      {showScoreDropDown && (
-        <ScoreDropDown
-          index={index}
-          setShowScoreDropDown={setShowScoreDropDown}
-          showScoreDropDown={showScoreDropDown}
-        />
-      )}
-
-      <CombatantDetails />
+      <CombatantDetails text={combatantData.score} onClick={handleScoreOpen}>
+        {showScoreDropDown && (
+          <ScoreDropDown
+            index={index}
+            setShowScoreDropDown={setShowScoreDropDown}
+            showScoreDropDown={showScoreDropDown}
+          />
+        )}
+      </CombatantDetails>
 
       <Button
-        text="Remove"
-        color="#6a5d83"
+        text="✖"
+        color="var(--borderColor)"
         onClick={() => removeCombatant(index)}
         small
         end

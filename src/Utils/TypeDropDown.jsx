@@ -5,13 +5,26 @@ import { CombatantContext } from "../Contexts/CombatantContext";
 
 const StyledTypeDropDown = styled.div`
   position: absolute;
-  top: 90%;
-  left: 6%;
+  top: 160%;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0.5rem;
   z-index: 10;
-  background-color: #0c0122;
-  border: 2px solid #6a5d83;
-  width: 140px;
+  background-color: var(--boxColor);
+  border: var(--border);
+  width: 170px;
+
+  &::before {
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid var(--borderColor);
+    z-index: 9;
+  }
 `;
 
 const TypeDropDown = ({ index, setShowTypeDropDown, showTypeDropDown }) => {
@@ -26,21 +39,18 @@ const TypeDropDown = ({ index, setShowTypeDropDown, showTypeDropDown }) => {
     <StyledTypeDropDown>
       <Button
         text="Player"
-        color="#8CBA80"
-        onClick={() => handleOnClick("Player", "#8CBA80", index)}
-        marginButton
+        color="var(--playerColor)"
+        onClick={() => handleOnClick("Player", "var(--playerColor)", index)}
       />
       <Button
         text="Monster"
-        color="#DA4167"
-        onClick={() => handleOnClick("Monster", "#DA4167", index)}
-        marginButton
+        color="var(--monsterColor)"
+        onClick={() => handleOnClick("Monster", "var(--monsterColor)", index)}
       />
       <Button
         text="NPC"
-        color="#2E86AB"
-        onClick={() => handleOnClick("NPC", "#2E86AB", index)}
-        marginButton
+        color="var(--npcColor)"
+        onClick={() => handleOnClick("NPC", "var(--npcColor)", index)}
       />
     </StyledTypeDropDown>
   );

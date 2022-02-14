@@ -14,28 +14,35 @@ const EntryButtonCollection = () => {
   return (
     <StyledEntryButtonCollection>
       <Button
-        color="#8CBA80"
+        color="var(--playerColor)"
         text="Add Player"
         onClick={(e) =>
-          handleOpenModal(e, "#8CBA80", "Player", "Enter Player Details")
+          handleOpenModal(
+            e,
+            "var(--playerColor)",
+            "Player",
+            "Enter Player Details"
+          )
         }
-        marginButton
       />
       <Button
-        color="#DA4167"
+        color="var(--monsterColor)"
         text="Add Monster"
         onClick={(e) =>
-          handleOpenModal(e, "#DA4167", "Monster", "Enter Monster Details")
+          handleOpenModal(
+            e,
+            "var(--monsterColor)",
+            "Monster",
+            "Enter Monster Details"
+          )
         }
-        marginButton
       />
       <Button
-        color="#2E86AB"
+        color="var(--npcColor)"
         text="Add NPC"
         onClick={(e) =>
-          handleOpenModal(e, "#2E86AB", "NPC", "Enter NPC Details")
+          handleOpenModal(e, "var(--npcColor)", "NPC", "Enter NPC Details")
         }
-        marginButton
       />
     </StyledEntryButtonCollection>
   );

@@ -4,7 +4,7 @@ import { ModalContext } from "../Contexts/ModalContext";
 
 const StyledModalDirective = styled.h1`
   color: #000000;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: bold;
   line-height: 1;
   grid-column: 1/-1;

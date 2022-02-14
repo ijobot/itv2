@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import styled from "styled-components";
 import Input from "./Input";
 import Button from "./Button";
@@ -16,10 +16,12 @@ const ModalControls = () => {
   const { name, score, setName, setScore, handleCombatantSubmit } =
     useContext(CombatantContext);
   const { handleCloseModal } = useContext(ModalContext);
+
   return (
     <StyledModalControls>
       <div>
         <Input
+          autoFocus
           type="text"
           placeholder="Enter Name"
           value={name}
@@ -32,20 +34,20 @@ const ModalControls = () => {
           value={score}
           pattern="[0-9]*"
           onChange={(e) =>
-          setScore(parseInt(e.target.value.split(/\D/).join("")))
+            setScore(parseInt(e.target.value.split(/\D/).join("")))
           }
         />
       </div>
 
       <div>
         <Button
-          color="#6a5d83"
+          color="var(--borderColor)"
           text="Submit"
           onClick={(e) => handleCombatantSubmit(e)}
           marginButton
         />
         <Button
-          color="#6a5d83"
+          color="var(--borderColor)"
           text="Cancel"
           onClick={handleCloseModal}
           marginButton

@@ -1,11 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap");
+
+:root {
+  --playerColor: #54805a;
+  --monsterColor: #94303f;
+  --npcColor: #3e6da3;
+  --boxColor: #22181c;
+  --borderColor: #817a90;
+  --textColor: #a1cca5;
+  --border: 3px solid var(--borderColor);
+}
+
 * {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  font-weight: 900;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Merriweather", serif;
+  line-height: 1;
 }
 
 button {
   width: min-content;
+}
+
+p {
+  line-height: 1;
 }

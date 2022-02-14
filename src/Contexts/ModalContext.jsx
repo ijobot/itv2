@@ -6,7 +6,9 @@ const ModalContextProvider = (props) => {
   const [showModal, setShowModal] = useState(false);
   const [modalColor, setModalColor] = useState("");
   const [combatantType, setCombatantType] = useState("");
-  const [modalDirective, setModalDirective] = useState("Enter Player Details");
+  const [modalDirective, setModalDirective] = useState(
+    "Enter Character Details"
+  );
   const [combatantRowColor, setCombatantRowColor] = useState("");
 
   const handleOpenModal = (e, color, combatantType, directive) => {

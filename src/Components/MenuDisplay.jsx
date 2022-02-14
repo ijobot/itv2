@@ -7,8 +7,8 @@ const StyledMenuDisplay = styled.div`
   grid-column-start: 2;
   grid-row-start: 4;
   justify-content: space-between;
-  background-color: #0c0122;
-  border: 2px solid #6a5d83;
+  background-color: var(--boxColor);
+  border: var(--border);
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
