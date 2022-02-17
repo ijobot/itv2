@@ -50,7 +50,7 @@ const ScoreDropDown = ({ index }) => {
       style={{ marginBottom: "0rem" }}
       text={option}
       onClick={() => handleOnClick(option)}
-      color="var(--borderColor)"
+      color="var(--functionButtonColor)"
       small
     />
   ));

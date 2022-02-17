@@ -8,6 +8,7 @@ const StyledCombatDisplay = styled.div`
   background-color: var(--boxColor);
   border: var(--border);
   padding: 0.5rem;
+  z-index: 2;
 `;
 
 const CombatDisplay = () => {

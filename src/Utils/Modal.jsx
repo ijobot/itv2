@@ -11,7 +11,7 @@ const StyledModal = styled.div`
   transform: translate(-50%, -50%);
   padding: 1rem;
   border: 5px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 100px 1000px #000000bb;
+  box-shadow: 0px 0px 100px 1000px #00000099;
   min-width: 400px;
   max-width: 40%;
   font-size: 1rem;

@@ -145,7 +145,7 @@ const CombatantRow = ({ combatantData, index }) => {
 
       <Button
         text="✖"
-        color="var(--borderColor)"
+        color="var(--functionButtonColor)"
         onClick={() => removeCombatant(index)}
         small
         end

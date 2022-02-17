@@ -7,7 +7,7 @@ const ClearButton = () => {
 
   return (
     <Button
-      color="var(--borderColor)"
+      color="var(--functionButtonColor)"
       text="Clear All"
       onClick={(e) => handleClearCombatants(e)}
     />

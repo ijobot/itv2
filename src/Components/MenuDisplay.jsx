@@ -12,6 +12,7 @@ const StyledMenuDisplay = styled.div`
   display: flex;
   flex-direction: column;
   padding: 0.5rem;
+  z-index: 2;
 `;
 
 const MenuDisplay = () => {

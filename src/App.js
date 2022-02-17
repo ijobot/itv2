@@ -24,6 +24,68 @@ const StyledApp = styled.div`
   background-size: cover;
   font-size: 1rem;
   background-blend-mode: multiply;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1100px;
+    width: 1100px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      var(--innerFlame) 0%,
+      5%,
+      var(--outerFlame) 5%,
+      8%,
+      transparent 70%,
+      transparent 100%
+    );
+    left: -700px;
+    top: -525px;
+    z-index: 1;
+    animation: flicker 0.95s alternate-reverse infinite;
+    animation-timing-function: steps(6, jump-none);
+    animation-delay: 250ms;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 1100px;
+    width: 1100px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      var(--innerFlame) 0%,
+      5%,
+      var(--outerFlame) 5%,
+      8%,
+      transparent 70%,
+      transparent 100%
+    );
+    right: -700px;
+    top: -525px;
+    z-index: 1;
+    animation: flicker 0.75s alternate-reverse infinite;
+    animation-timing-function: steps(6, jump-none);
+  }
+
+  @keyframes flicker {
+    25% {
+      transform: scale(1.05);
+    }
+    50% {
+      transform: scale(1.125);
+    }
+    75% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 `;
 
 function App() {

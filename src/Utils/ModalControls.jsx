@@ -41,13 +41,13 @@ const ModalControls = () => {
 
       <div>
         <Button
-          color="var(--borderColor)"
+          color="var(--functionButtonColor)"
           text="Submit"
           onClick={(e) => handleCombatantSubmit(e)}
           marginButton
         />
         <Button
-          color="var(--borderColor)"
+          color="var(--functionButtonColor)"
           text="Cancel"
           onClick={handleCloseModal}
           marginButton

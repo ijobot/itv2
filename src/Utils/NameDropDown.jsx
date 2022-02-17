@@ -50,7 +50,7 @@ const NameDropDown = ({ index, setShowNameDropDown }) => {
         onChange={(e) => setInput(e.target.value)}
       />
       <Button
-        color="var(--borderColor)"
+        color="var(--functionButtonColor)"
         text="Done"
         onClick={() => handleOnClick(input, index)}
       />

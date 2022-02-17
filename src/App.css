@@ -4,10 +4,27 @@
   --playerColor: #54805a;
   --monsterColor: #94303f;
   --npcColor: #3e6da3;
-  --boxColor: #22181c;
-  --borderColor: #817a90;
-  --textColor: #a1cca5;
+  --boxColor: #131111;
+  --borderColor: #3b2864;
+  --functionButtonColor: #645983;
   --border: 3px solid var(--borderColor);
+  --outerFlame: #dbdb15;
+  --innerFlame: #ffa500;
+}
+
+body::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--boxColor); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--borderColor); /* color of the scroll thumb */
+  border-radius: 10px; /* roundness of the scroll thumb */
+  border: 5px solid var(--borderColor); /* creates padding around scroll thumb */
+  height: 20%;
 }
 
 * {
