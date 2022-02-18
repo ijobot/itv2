@@ -16,6 +16,12 @@ const StyledApp = styled.div`
   display: grid;
   grid-template-columns: 6rem 1fr 2rem 3.5fr 6rem;
   grid-template-rows: 2rem auto 2rem 1fr 2rem;
+  grid-template-areas:
+    ". . . . ."
+    ". title . display ."
+    ". . . display ."
+    ". buttons . display ."
+    ". . . . .";
   text-align: center;
   min-height: 100vh;
   background-color: var(--borderColor);
@@ -85,6 +91,31 @@ const StyledApp = styled.div`
     100% {
       transform: scale(1);
     }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: 2rem 1fr 2rem 3.5fr 2rem;
+    grid-template-rows: 2rem auto 2rem 1fr 2rem;
+    grid-template-areas:
+      ". . . . ."
+      ". title . display ."
+      ". . . display ."
+      ". buttons . display ."
+      ". . . . .";
+  }
+
+  @media only screen and (max-width: 820px) {
+    font-size: 1rem;
+    grid-template-columns: 2rem 1fr 2fr 1fr 2rem;
+    grid-template-rows: 2rem min-content 1rem min-content 1rem auto 2rem;
+    grid-template-areas:
+      ". . . . ."
+      ". . title . ."
+      ". . . . ."
+      ". buttons buttons buttons ."
+      ". . . . ."
+      ". display display display ."
+      ". . . . .";
   }
 `;
 

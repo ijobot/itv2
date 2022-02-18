@@ -9,12 +9,18 @@ import ScoreDropDown from "../Utils/ScoreDropDown";
 
 const StyledCombatantRow = styled.div`
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   padding: 0.5rem;
-  border: 5px solid rgba(0, 0, 0, 0.3);
+  width: 100%;
+  border: 3px solid rgba(0, 0, 0, 0.3);
   transition: 150ms ease-in;
+
+  button:last-of-type {
+    margin-left: auto;
+  }
 
   &:not(:last-of-type) {
     margin-bottom: 0.5rem;
@@ -22,8 +28,12 @@ const StyledCombatantRow = styled.div`
 
   &:hover,
   &: focus {
-    border: 5px solid rgba(255, 255, 255, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
+  }
+
+  @media only screen and (max-width: 820px) {
+    font-size: 0.1rem;
   }
 `;
 
@@ -144,11 +154,11 @@ const CombatantRow = ({ combatantData, index }) => {
       </CombatantDetails>
 
       <Button
+        tabindex="1"
         text="✖"
-        color="var(--functionButtonColor)"
+        color="var(--generalColor)"
         onClick={() => removeCombatant(index)}
         small
-        end
       />
     </StyledCombatantRow>
   );

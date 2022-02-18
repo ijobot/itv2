@@ -3,10 +3,10 @@
 :root {
   --playerColor: #54805a;
   --monsterColor: #94303f;
-  --npcColor: #3e6da3;
+  --npcColor: #376191;
   --boxColor: #131111;
-  --borderColor: #3b2864;
-  --functionButtonColor: #645983;
+  --borderColor: #34235a;
+  --generalColor: #645983;
   --border: 3px solid var(--borderColor);
   --outerFlame: #dbdb15;
   --innerFlame: #ffa500;
@@ -34,7 +34,7 @@ body::-webkit-scrollbar-thumb {
   font-weight: 900;
   box-sizing: border-box;
   font-family: "Merriweather", serif;
-  line-height: 1;
+  line-height: 0.5;
 }
 
 button {

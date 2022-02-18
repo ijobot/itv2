@@ -3,8 +3,7 @@ import styled from "styled-components";
 import Combatants from "./Combatants";
 
 const StyledCombatDisplay = styled.div`
-  grid-column: 4 / 5;
-  grid-row: 2/5;
+  grid-area: display;
   background-color: var(--boxColor);
   border: var(--border);
   padding: 0.5rem;

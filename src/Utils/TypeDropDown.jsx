@@ -16,7 +16,7 @@ const StyledTypeDropDown = styled.div`
 
   &::before {
     position: absolute;
-    top: -23px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
     content: "";
@@ -41,11 +41,13 @@ const TypeDropDown = ({ index, setShowTypeDropDown, showTypeDropDown }) => {
         text="Player"
         color="var(--playerColor)"
         onClick={() => handleOnClick("Player", "var(--playerColor)", index)}
+        marginButton
       />
       <Button
         text="Monster"
         color="var(--monsterColor)"
         onClick={() => handleOnClick("Monster", "var(--monsterColor)", index)}
+        marginButton
       />
       <Button
         text="NPC"

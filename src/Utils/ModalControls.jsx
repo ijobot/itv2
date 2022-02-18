@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import Input from "./Input";
 import Button from "./Button";
@@ -10,6 +10,13 @@ const StyledModalControls = styled.div`
   grid-column: 1/-1;
   grid-row: 3/4;
   gap: 1rem;
+
+  @media only screen and (max-width: 820px) {
+    button {
+      height: 4.25rem;
+      gap: 0.5rem;
+    }
+  }
 `;
 
 const ModalControls = () => {
@@ -41,16 +48,15 @@ const ModalControls = () => {
 
       <div>
         <Button
-          color="var(--functionButtonColor)"
+          color="var(--generalColor)"
           text="Submit"
           onClick={(e) => handleCombatantSubmit(e)}
           marginButton
         />
         <Button
-          color="var(--functionButtonColor)"
+          color="var(--generalColor)"
           text="Cancel"
           onClick={handleCloseModal}
-          marginButton
         />
       </div>
     </StyledModalControls>

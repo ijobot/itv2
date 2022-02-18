@@ -28,6 +28,7 @@ const ModalContextProvider = (props) => {
     <ModalContext.Provider
       value={{
         showModal,
+        setShowModal,
         modalDirective,
         combatantType,
         combatantRowColor,

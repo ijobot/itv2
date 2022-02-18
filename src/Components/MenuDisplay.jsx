@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import EntryButtonCollection from "./EntryButtonCollection";
-import ClearButton from "./ClearButton";
 
 const StyledMenuDisplay = styled.div`
-  grid-column-start: 2;
-  grid-row-start: 4;
+  grid-area: buttons;
   justify-content: space-between;
   background-color: var(--boxColor);
   border: var(--border);
@@ -13,13 +11,17 @@ const StyledMenuDisplay = styled.div`
   flex-direction: column;
   padding: 0.5rem;
   z-index: 2;
+
+  @media only screen and (max-width: 820px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 `;
 
 const MenuDisplay = () => {
   return (
     <StyledMenuDisplay>
       <EntryButtonCollection />
-      <ClearButton />
     </StyledMenuDisplay>
   );
 };

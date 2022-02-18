@@ -20,7 +20,7 @@ const StyledNameDropDown = styled.div`
 
   &::before {
     position: absolute;
-    top: -23px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
     content: "";
@@ -50,7 +50,7 @@ const NameDropDown = ({ index, setShowNameDropDown }) => {
         onChange={(e) => setInput(e.target.value)}
       />
       <Button
-        color="var(--functionButtonColor)"
+        color="var(--generalColor)"
         text="Done"
         onClick={() => handleOnClick(input, index)}
       />

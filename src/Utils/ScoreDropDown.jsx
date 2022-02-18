@@ -19,7 +19,7 @@ const StyledScoreDropDown = styled.div`
 
   &::before {
     position: absolute;
-    top: -23px;
+    top: -22px;
     left: 50%;
     transform: translateX(-50%);
     content: "";
@@ -46,11 +46,12 @@ const ScoreDropDown = ({ index }) => {
   };
   const optionsMap = scoreOptions.map((option) => (
     <Button
+      tabindex="0"
       key={option}
       style={{ marginBottom: "0rem" }}
       text={option}
       onClick={() => handleOnClick(option)}
-      color="var(--functionButtonColor)"
+      color="var(--generalColor)"
       small
     />
   ));
