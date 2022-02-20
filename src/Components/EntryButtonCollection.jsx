@@ -11,12 +11,21 @@ const StyledEntryButtonCollection = styled.div`
   min-height: 100%;
   width: 100%;
 
+  button:last-of-type {
+    margin-top: auto;
+  }
+
   @media only screen and (max-width: 820px) {
     flex-direction: row;
     gap: 0.5rem;
 
-    button:last-of-type {
-      margin-left: 1rem;
+    &;button:nth-of-type(3) {
+      padding: 0 30px;
+    }
+
+    &;button:nth-of-type(4) {
+      margin-left: auto;
+      padding: 0 30px;
     }
   }
 `;
@@ -28,20 +37,14 @@ const EntryButtonCollection = () => {
   return (
     <StyledEntryButtonCollection>
       <Button
-        marginButton
         color="var(--playerColor)"
-        text="Add Player"
+        text="Add 
+        Player"
         onClick={(e) =>
-          handleOpenModal(
-            e,
-            "var(--playerColor)",
-            "Player",
-            "Enter Player Details"
-          )
+          handleOpenModal(e, "var(--playerColor)", "Player", "Player Details")
         }
       />
       <Button
-        marginButton
         color="var(--monsterColor)"
         text="Add Monster"
         onClick={(e) =>
@@ -49,16 +52,15 @@ const EntryButtonCollection = () => {
             e,
             "var(--monsterColor)",
             "Monster",
-            "Enter Monster Details"
+            "Monster Details"
           )
         }
       />
       <Button
-        marginButton
         color="var(--npcColor)"
         text="Add NPC"
         onClick={(e) =>
-          handleOpenModal(e, "var(--npcColor)", "NPC", "Enter NPC Details")
+          handleOpenModal(e, "var(--npcColor)", "NPC", "NPC Details")
         }
       />
       <Button

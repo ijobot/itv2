@@ -5,27 +5,33 @@ import { CombatantContext } from "../Contexts/CombatantContext";
 
 const StyledTypeDropDown = styled.div`
   position: absolute;
-  top: 160%;
+  top: 110%;
   left: 50%;
   transform: translateX(-50%);
   padding: 0.5rem;
   z-index: 10;
   background-color: var(--boxColor);
-  border: var(--border);
+  border: 3px solid var(--borderColor);
   width: 170px;
+  height: fit-content;
 
   &::before {
     position: absolute;
-    top: -22px;
+    top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    content: "";
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid var(--borderColor);
-    z-index: 9;
+    content: " ";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--borderColor);
+    z-index: 15;
   }
-`;
+  
+  &;button {
+    width: 100%;
+    height: 60px;
+  }
+  `;
 
 const TypeDropDown = ({ index, setShowTypeDropDown, showTypeDropDown }) => {
   const { handleTypeChange } = useContext(CombatantContext);
@@ -41,13 +47,11 @@ const TypeDropDown = ({ index, setShowTypeDropDown, showTypeDropDown }) => {
         text="Player"
         color="var(--playerColor)"
         onClick={() => handleOnClick("Player", "var(--playerColor)", index)}
-        marginButton
       />
       <Button
         text="Monster"
         color="var(--monsterColor)"
         onClick={() => handleOnClick("Monster", "var(--monsterColor)", index)}
-        marginButton
       />
       <Button
         text="NPC"

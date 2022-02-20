@@ -1,21 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledMainTitle = styled.h1`
+const StyledMainTitle = styled.div`
   grid-area: title;
-  font-size: 3.5rem;
-  letter-spacing: -2px;
   color: var(--generalColor);
-  line-height: 1.1;
+  line-height: 0.8;
   background-color: var(--boxColor);
   border: var(--border);
-  padding: 0.65rem 0.8rem 0.3rem;
+  padding: 0.6rem 0rem 0.4rem;
   z-index: 2;
+  height: auto;
+  width: auto;
 `;
 
 const MainTitle = () => {
   const appTitle = "Battle Plan";
-  return <StyledMainTitle>{appTitle}</StyledMainTitle>;
+  return (
+    <StyledMainTitle>
+      <h1>{appTitle}</h1>
+    </StyledMainTitle>
+  );
 };
 
 export default MainTitle;

@@ -13,8 +13,8 @@ const StyledModalControls = styled.div`
 
   @media only screen and (max-width: 820px) {
     button {
-      height: 4.25rem;
-      gap: 0.5rem;
+      height: 60px;
+      width: 100%;
     }
   }
 `;
@@ -46,7 +46,7 @@ const ModalControls = () => {
         />
       </div>
 
-      <div>
+      <div stlye={{ justifyItems: "space-between" }}>
         <Button
           color="var(--generalColor)"
           text="Submit"

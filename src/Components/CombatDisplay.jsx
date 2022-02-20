@@ -6,8 +6,23 @@ const StyledCombatDisplay = styled.div`
   grid-area: display;
   background-color: var(--boxColor);
   border: var(--border);
+  border-right: 2px;
   padding: 0.5rem;
   z-index: 2;
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--borderColor);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--generalColor);
+    height: 100px;
+  }
 `;
 
 const CombatDisplay = () => {

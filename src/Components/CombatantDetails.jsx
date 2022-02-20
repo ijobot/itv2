@@ -15,12 +15,14 @@ const StyledCombatantDetails = styled.div`
 
 const StyledCombatantButton = styled.button`
   padding: 0.25rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   background: transparent;
   border: none;
-  height: 2rem;
+  height: 100%;
   width: 100%;
-  line-height: 1.1;
+  line-height: 0.9;
+  justify-self: center;
+  padding-top: 5px;
 
   &:hover,
   &:focus {
@@ -30,7 +32,6 @@ const StyledCombatantButton = styled.button`
   }
 
   @media only screen and (max-width: 820px) {
-    font-size: 1.2rem;
   }
 `;
 

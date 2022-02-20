@@ -6,28 +6,33 @@ import { CombatantContext } from "../Contexts/CombatantContext";
 
 const StyledNameDropDown = styled.div`
   position: absolute;
-  top: 160%;
+  top: 110%;
   left: 50%;
   transform: translateX(-50%);
-  width: 400px;
   padding: 0.5rem;
-  z-index: 10;
+  z-index: 5;
   background-color: var(--boxColor);
-  border: var(--border);
+  border: 3px solid var(--borderColor);
+  width: 400px;
   display: grid;
   grid-template-columns: 4fr 1fr;
   gap: 0.5rem;
 
+  &;button {
+    width: 100%;
+    height: 60px;
+  }
+
   &::before {
     position: absolute;
-    top: -22px;
+    top: -12px;
     left: 50%;
     transform: translateX(-50%);
     content: "";
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 20px solid var(--borderColor);
-    z-index: 9;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--borderColor);
+    z-index: 4;
   }
 `;
 

@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { ModalContext } from "../Contexts/ModalContext";
 
 const StyledModalDirective = styled.h1`
-  color: #000000;
-  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 3rem;
   font-weight: bold;
   line-height: 1;
   grid-column: 1/-1;

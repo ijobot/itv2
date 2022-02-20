@@ -10,13 +10,13 @@ const CombatantContextProvider = (props) => {
   const [combatantList, setCombatantList] = useState([]);
 
   if (score !== score) {
-    setScore("Set Score!");
+    setScore("-");
   } else if (score === "") {
-    setScore("Set Score!");
+    setScore("-");
   }
 
   if (name === "") {
-    setName("Set Name!");
+    setName("-");
   }
 
   const { handleCloseModal, combatantType, combatantRowColor } =
@@ -58,7 +58,7 @@ const CombatantContextProvider = (props) => {
   const handleNameChange = (newName, index) => {
     const updatedCombatantList = cloneDeep(combatantList);
     if (newName === "") {
-      updatedCombatantList[index].name = "Set Name!";
+      updatedCombatantList[index].name = combatantList[index].name;
       setCombatantList(updatedCombatantList);
     } else {
       updatedCombatantList[index].name = newName;

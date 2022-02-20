@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&display=swap");
 
 :root {
-  --playerColor: #54805a;
-  --monsterColor: #94303f;
-  --npcColor: #376191;
-  --boxColor: #131111;
-  --borderColor: #34235a;
-  --generalColor: #645983;
-  --border: 3px solid var(--borderColor);
+  --playerColor: #2d973b;
+  --monsterColor: #aa2a3d;
+  --npcColor: #2c67ac;
+  --boxColor: #11010e;
+  --borderColor: #1c1122;
+  --backgroundColor: #1f0c4e;
+  --generalColor: #5d5670;
+  --border: 6px solid var(--borderColor);
   --outerFlame: #dbdb15;
   --innerFlame: #ffa500;
 }
@@ -17,14 +18,12 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: var(--boxColor); /* color of the tracking area */
+  background: var(--borderColor); /* color of the tracking area */
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: var(--borderColor); /* color of the scroll thumb */
-  border-radius: 10px; /* roundness of the scroll thumb */
-  border: 5px solid var(--borderColor); /* creates padding around scroll thumb */
-  height: 20%;
+  background-color: var(--generalColor); /* color of the scroll thumb */
+  height: 100px;
 }
 
 * {
@@ -33,8 +32,16 @@ body::-webkit-scrollbar-thumb {
   font-size: 16px;
   font-weight: 900;
   box-sizing: border-box;
-  font-family: "Merriweather", serif;
+  font-family: "Almendra", serif;
   line-height: 0.5;
+}
+
+h1 {
+  font-size: 4.25rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--generalColor);
+  line-height: 0.9;
 }
 
 button {
