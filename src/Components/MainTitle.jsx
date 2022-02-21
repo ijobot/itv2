@@ -11,6 +11,36 @@ const StyledMainTitle = styled.div`
   z-index: 2;
   height: auto;
   width: auto;
+
+  @media only screen and (max-width: 1024px) {
+    h1 {
+      font-size: 45px;
+    }
+  }
+
+  @media only screen and (max-width: 820px) {
+    h1 {
+      font-size: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 820px) {
+    h1 {
+      font-size: 35px;
+    }
+  }
+
+  @media only screen and (max-width: 520px) {
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 380px) {
+    h1 {
+      font-size: 25px;
+    }
+  }
 `;
 
 const MainTitle = () => {

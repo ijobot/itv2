@@ -24,8 +24,35 @@ const StyledEntryButtonCollection = styled.div`
     }
 
     &;button:nth-of-type(4) {
+
       margin-left: auto;
-      padding: 0 30px;
+      margin-bottom: 8px;
+      padding: 5px 40px;
+      text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 520px) {
+    button {
+      height: 70px;
+      width: 80px;
+      font-size: 15px; 
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    button {
+      height: 60px;
+      width: 70px;
+      font-size: 12.5px; 
+    }
+  }
+
+  @media only screen and (max-width: 389px) {
+    button {
+      height: 50px;
+      width: 60px;
+      font-size: 10.5px; 
     }
   }
 `;
