@@ -11,6 +11,12 @@ const StyledCombatantDetails = styled.div`
   outline: none;
   background: none;
   border: none;
+
+  @media only screen and (max-width: 1100px) {
+    button {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const StyledCombatantButton = styled.button`
@@ -29,9 +35,6 @@ const StyledCombatantButton = styled.button`
     color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     outline: none;
-  }
-
-  @media only screen and (max-width: 820px) {
   }
 `;
 

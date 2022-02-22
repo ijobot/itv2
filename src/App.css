@@ -33,7 +33,6 @@ body::-webkit-scrollbar-thumb {
   font-weight: 900;
   box-sizing: border-box;
   font-family: "Almendra", serif;
-  line-height: 0.5;
 }
 
 h1 {
@@ -50,4 +49,14 @@ button {
 
 p {
   line-height: 1;
+}
+
+@media only screen and (max-width: 425px) {
+  :root {
+    --border: 3px solid var(--borderColor);
+  }
+
+  * {
+    font-size: 12px;
+  }
 }

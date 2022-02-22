@@ -50,6 +50,9 @@ const StyledButton = styled.button`
       margin-bottom: ${({ marginButton }) => (marginButton ? ".5rem" : "0rem")};
     }
   }
+
+  @media only screen and (max-width: 425px) {
+  }
 `;
 
 const Button = ({

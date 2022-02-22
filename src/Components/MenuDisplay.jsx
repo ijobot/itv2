@@ -13,13 +13,15 @@ const StyledMenuDisplay = styled.div`
   z-index: 2;
   max-height: 649px;
 
-  @media only screen and (max-width: 1024px) {
-    max-height: 473px;
-  }
-
   @media only screen and (max-width: 820px) {
     flex-direction: row;
     justify-content: space-evenly;
+  }
+
+  @media only screen and (max-width: 425px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: calc(100%-2rem);
   }
 `;
 

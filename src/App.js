@@ -89,19 +89,16 @@ const StyledApp = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1180px) {
-    grid-template-columns: 6rem 220px 2rem 3.5fr 6rem;
+  @media only screen and (max-width: 1380px) {
+    grid-template-columns: 4rem 220px 2rem 3.5fr 4rem;
   }
 
-  @media only screen and (max-width: 1024px) {
-    grid-template-columns: 4rem 220px 2rem 3.5fr 4rem;
-    grid-template-rows: 2rem auto 2rem 1fr 2rem;
-    grid-template-areas:
-      ". . . . ."
-      ". title . display ."
-      ". . . display ."
-      ". buttons . display ."
-      ". . . . .";
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: 2rem 220px 2rem 3.5fr 2rem;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    grid-template-columns: 2rem 180px 2rem 3.5fr 2rem;
   }
 
   @media only screen and (max-width: 820px) {
@@ -116,6 +113,9 @@ const StyledApp = styled.div`
       ". display ."
       ". . .";
   }
+  @media only screen and (max-width: 425px) {
+    grid-template-columns: 1rem 1fr 1rem;
+    grid-template-rows: 1rem min-content 1rem min-content 1rem 840px 1rem;
 `;
 
 function App() {

@@ -11,6 +11,16 @@ const StyledMainTitle = styled.div`
   z-index: 2;
   height: auto;
   width: auto;
+
+  @media only screen and (max-width: 425px) {
+    padding-top: 10px;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    h1 {
+      font-size: 3.2rem;
+    }
+  }
 `;
 
 const MainTitle = () => {

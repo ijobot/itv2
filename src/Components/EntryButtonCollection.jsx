@@ -15,6 +15,12 @@ const StyledEntryButtonCollection = styled.div`
     margin-top: auto;
   }
 
+  @media only screen and (max-width: 1100px) {
+    button {
+      font-size: ${({ small }) => (small ? ".75rem" : "1.25rem")};
+    }
+  }
+
   @media only screen and (max-width: 820px) {
     flex-direction: row;
     gap: 0.5rem;
@@ -26,6 +32,23 @@ const StyledEntryButtonCollection = styled.div`
     &;button:nth-of-type(4) {
       margin-left: auto;
       padding: 0 30px;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    &;button {
+      font-size: ${({ small }) => (small ? ".25rem" : "1rem")};
+      padding: 0;
+      height: 60px;}
+
+      &;button:nth-of-type(3) {
+        padding: 0px;
+      }
+  
+      &;button:nth-of-type(4) {
+        margin-left: auto;
+        padding: 0px;
+      }
     }
   }
 `;
