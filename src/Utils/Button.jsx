@@ -20,9 +20,10 @@ const StyledButton = styled.button`
   transition: 100ms ease-in;
 
   &:not(:last-of-type) {
-    margin-bottom: ${({ marginButton, noMargin }) =>
-      marginButton ? "1rem" : noMargin ? "0rem" : ".5rem"};
-  }
+  margin-bottom: ${({ marginButton, noMargin }) =>
+    marginButton ? "1rem" : noMargin ? "0rem" : ".5rem"};
+}
+
 
   &:hover,
   &: focus {
@@ -35,25 +36,37 @@ const StyledButton = styled.button`
   }
 
   @media only screen and (max-width: 820px) {
-    font-size: ${({ small }) => (small ? "1rem" : "1.75rem")};
-    padding: ${({ small }) =>
-      small ? "0.2rem .5rem" : ".85rem .85rem .65rem"};
-    width: ${({ small }) => (small ? "40px" : "23%")};
-    height: ${({ small }) => (small ? "40px" : "100px")};
+    font-size: 20px;
+    width: 100px;
+    height: 80px;
+    margin-bottom: 17px;
+    margin-top: 17px;
+    padding-left: -80px;
+    text-align: justified;
 
     :last-of-type {
       margin-left: auto;
       min-width: 2.5rem;
     }
 
-    &:not(:last-of-type) {
-      margin-bottom: ${({ marginButton }) => (marginButton ? ".5rem" : "0rem")};
-    }
+    @media only screen and (max-width: 520px) {
+      font-size: 15px;
+      text-align: justified;
+      padding-left: -40px;
+      margin-bottom: 17px;
+      margin-top: 17px;
+      padding-left: -80px;
+      text-align: justified;
+  
+      :last-of-type {
+        margin-left: auto;
+        min-width: 2.5rem;
   }
 
   @media only screen and (max-width: 425px) {
   }
 `;
+
 
 const Button = ({
   color,

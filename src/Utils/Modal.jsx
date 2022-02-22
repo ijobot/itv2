@@ -27,6 +27,32 @@ const StyledModal = styled.div`
 
   @media only screen and (max-width: 820px) {
     width: 500px;
+    position: absolute;
+    top: 50%;
+  }
+
+  @media only screen and (max-width: 520px) {
+    width: 380px;
+    position: absolute;
+    h1 {
+      font-size: 35px;
+    }
+    top: 50%;
+    input {
+      height: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 380px) {
+    width: 300px;
+    position: absolute;
+    h1 {
+      font-size: 30px;
+    }
+    top: 50%;
+    input {
+      height: 30px;
+    }
   }
 `;
 

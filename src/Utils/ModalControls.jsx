@@ -17,6 +17,22 @@ const StyledModalControls = styled.div`
       width: 100%;
     }
   }
+
+  @media only screen and (max-width: 520px) {
+    button {
+      height: 30px;
+      margin-bottom: 10px;
+      width: 80%;
+    }
+  }
+
+  @media only screen and (max-width: 380px) {
+    button {
+      height: 30px;
+      margin-bottom: 10px;
+      width: 80%;
+    }
+  }
 `;
 
 const ModalControls = () => {

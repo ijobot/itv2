@@ -26,6 +26,22 @@ const StyledInput = styled.input`
     outline: none;
     border: 4px solid var(--generalColor);
   }
+
+  @media only screen and (max-width: 820px) {
+    font-size: 20px;
+    margin-top: 17px;
+    text-align: justified;
+    padding-left: -45px;
+  
+    }
+
+  @media only screen and (max-width: 520px) {
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: justified;
+    padding-left: -45px;
+  
+}
 `;
 
 const Input = ({ type, placeholder, value, onChange, pattern, autoFocus }) => {
