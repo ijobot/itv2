@@ -96,7 +96,7 @@ const StyledApp = styled.div`
 
   @media only screen and (max-width: 1024px) {
     height: 0px;
-    grid-template-columns: 4rem 220px 2rem 3.5fr 4rem;
+    grid-template-columns: 2em auto 2rem 3.5fr 2rem;
     grid-template-rows: 2rem auto 2rem 1fr 2rem;
     grid-template-areas:
       ". . . . ."

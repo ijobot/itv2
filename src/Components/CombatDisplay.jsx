@@ -10,6 +10,7 @@ const StyledCombatDisplay = styled.div`
   padding: 0.5rem;
   z-index: 2;
   overflow-y: scroll;
+  overflow-x: hidden;
 
   ::-webkit-scrollbar {
     width: 6px;

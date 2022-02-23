@@ -13,6 +13,9 @@ const StyledMenuDisplay = styled.div`
   z-index: 2;
   max-height: 649px;
 
+  @media only screen and (max-width: 1024px) {
+  }
+
   @media only screen and (max-width: 820px) {
     flex-direction: row;
     justify-content: space-evenly;

@@ -33,6 +33,7 @@ const StyledButton = styled.button`
   }
 
   @media only screen and (max-width: 1024px) {
+    width: ${({ small }) => (small ? "2.5rem" : "150px")};
   }
 
   @media only screen and (max-width: 820px) {
@@ -66,7 +67,6 @@ const StyledButton = styled.button`
   @media only screen and (max-width: 425px) {
   }
 `;
-
 
 const Button = ({
   color,

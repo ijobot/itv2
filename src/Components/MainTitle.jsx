@@ -27,6 +27,8 @@ const StyledMainTitle = styled.div`
   @media only screen and (max-width: 820px) {
     h1 {
       font-size: 35px;
+      display: inline-block;
+      margin-right: 10px;
     }
   }
 
@@ -44,10 +46,12 @@ const StyledMainTitle = styled.div`
 `;
 
 const MainTitle = () => {
-  const appTitle = "Battle Plan";
+  const battle = "Battle";
+  const plan = "Plan";
   return (
     <StyledMainTitle>
-      <h1>{appTitle}</h1>
+      <h1>{battle}</h1>
+      <h1>{plan}</h1>
     </StyledMainTitle>
   );
 };

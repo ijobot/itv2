@@ -34,6 +34,7 @@ const StyledScoreDropDown = styled.div`
     border-right: 10px solid transparent;
     border-bottom: 10px solid var(--borderColor);
     z-index: 15;
+    overflow: visible;
   }
 `;
 
