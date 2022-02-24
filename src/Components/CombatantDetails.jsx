@@ -11,30 +11,36 @@ const StyledCombatantDetails = styled.div`
   outline: none;
   background: none;
   border: none;
-
-  @media only screen and (max-width: 1100px) {
-    button {
-      font-size: 1.5rem;
-    }
-  }
 `;
 
 const StyledCombatantButton = styled.button`
   padding: 0.25rem;
-  font-size: 2rem;
   background: transparent;
   border: none;
   height: 100%;
   width: 100%;
-  line-height: 0.9;
+  line-height: 0.85;
   justify-self: center;
-  padding-top: 5px;
+  font-size: 2rem;
 
   &:hover,
   &:focus {
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--hoverTextColor);
     cursor: pointer;
     outline: none;
+  }
+  @media only screen and (max-width: 1300px) {
+    font-size: ${({ small }) => (small ? "1.25rem" : "1.65rem")};
+  }
+  @media only screen and (max-width: 1100px) {
+    font-size: ${({ small }) => (small ? "1.25rem" : "1.45rem")};
+  }
+  @media only screen and (max-width: 1030px) {
+    font-size: ${({ small }) => (small ? ".1rem" : "1.3rem")};
+  }
+  @media only screen and (max-width: 820px) {
+    font-size: ${({ small }) => (small ? "1rem" : "1.6rem")};
+    line-height: 0.9;
   }
 `;
 

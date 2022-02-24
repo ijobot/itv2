@@ -12,7 +12,7 @@ const StyledScoreDropDown = styled.div`
   padding: 0.5rem;
   z-index: 10;
   background-color: var(--boxColor);
-  border: 3px solid var(--borderColor);
+  border: 3px solid var(--borderColorLight);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 0.5rem;
@@ -21,18 +21,21 @@ const StyledScoreDropDown = styled.div`
   &;button {
     width: 2.5rem;
     font-size: 1.5rem;
-    padding-bottom: .3rem;
+    padding: 0;
+    height: 40px;
+    padding-bottom: 3px;
+
   }
 
   &::before {
     position: absolute;
-    top: -12px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
     content: " ";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid var(--borderColor);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--borderColor);
     z-index: 15;
     overflow: visible;
   }

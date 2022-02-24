@@ -12,7 +12,7 @@ const StyledNameDropDown = styled.div`
   padding: 0.5rem;
   z-index: 5;
   background-color: var(--boxColor);
-  border: 3px solid var(--borderColor);
+  border: 3px solid var(--borderColorLight);
   width: 400px;
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -25,13 +25,13 @@ const StyledNameDropDown = styled.div`
 
   &::before {
     position: absolute;
-    top: -12px;
+    top: -8px;
     left: 50%;
     transform: translateX(-50%);
     content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid var(--borderColor);
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--borderColor);
     z-index: 4;
   }
 `;

@@ -24,7 +24,7 @@ const StyledInput = styled.input`
 
   &:focus {
     outline: none;
-    border: 4px solid var(--generalColor);
+    border: 3px solid var(--hoverTextColor);
   }
 
   @media only screen and (max-width: 820px) {

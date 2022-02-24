@@ -1,35 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Almendra:wght@400;700&display=swap");
 
 :root {
-  --playerColor: #2d973b;
-  --monsterColor: #aa2a3d;
-  --npcColor: #2c67ac;
+  --playerColor: #29851d;
+  --monsterColor: #9e162b;
+  --npcColor: #165092ef;
   --boxColor: #11010e;
-  --borderColor: #1c1122;
-  --backgroundColor: #1f0c4e;
+  --borderColor: #1e0929;
+  --borderColorLight: #574d429d;
+  --backgroundColor: #241152;
   --generalColor: #5d5670;
-  --border: 6px solid var(--borderColor);
+  --borderTop: 10px solid var(--borderColor);
+  --borderRight: 10px solid var(--borderColor);
+  --borderBottom: 10px solid var(--borderColorLight);
+  --borderLeft: 10px solid var(--borderColorLight);
   --outerFlame: #dbdb15;
   --innerFlame: #ffa500;
-}
-
-body::-webkit-scrollbar {
-  width: 10px; /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--borderColor); /* color of the tracking area */
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: var(--generalColor); /* color of the scroll thumb */
-  height: 100px;
+  --hoverTextColor: #a8a823;
+  --mainTitleColor: #676a81;
+  font-size: 16px;
 }
 
 * {
   margin: 0;
   padding: 0;
-  font-size: 16px;
   font-weight: 900;
   box-sizing: border-box;
   font-family: "Almendra", serif;
@@ -39,7 +32,7 @@ h1 {
   font-size: 4.25rem;
   font-weight: bold;
   letter-spacing: 1px;
-  color: var(--generalColor);
+  color: var(--mainTitleColor);
   line-height: 0.9;
 }
 
@@ -51,12 +44,8 @@ p {
   line-height: 1;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 1100px) {
   :root {
     --border: 3px solid var(--borderColor);
-  }
-
-  * {
-    font-size: 12px;
   }
 }

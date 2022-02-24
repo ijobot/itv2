@@ -11,9 +11,9 @@ const StyledCombatantRow = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr auto;
-  padding: 0.5rem;
+  padding: 7px;
   width: 100%;
-  height: 60px;
+  height: 50px;
   border: 3px solid rgba(0, 0, 0, 0.3);
   transition: 150ms ease-in;
 
@@ -23,7 +23,7 @@ const StyledCombatantRow = styled.div`
 
   &:hover,
   &: focus {
-    border: 3px solid rgba(255, 255, 255, 0.2);
+    border: 3px solid var(--hoverTextColor);
     cursor: pointer;
   }
 `;

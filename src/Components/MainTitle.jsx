@@ -3,30 +3,25 @@ import styled from "styled-components";
 
 const StyledMainTitle = styled.div`
   grid-area: title;
-  color: var(--generalColor);
   line-height: 0.8;
   background-color: var(--boxColor);
-  border: var(--border);
+  border-top: var(--borderTop);
+  border-right: 8px solid var(--borderColorLight);
+  border-bottom: var(--borderBottom);
+  border-left: var(--borderRight);
   padding: 0.6rem 0rem 0.4rem;
   z-index: 2;
   height: auto;
   width: auto;
 
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 1030px) {
     h1 {
-      font-size: 45px;
+      font-size: 60px;
     }
   }
 
   @media only screen and (max-width: 820px) {
     h1 {
-      font-size: 40px;
-    }
-  }
-
-  @media only screen and (max-width: 820px) {
-    h1 {
-      font-size: 35px;
       display: inline-block;
       margin-right: 10px;
     }

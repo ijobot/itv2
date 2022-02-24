@@ -15,8 +15,8 @@ import stones from "../src/img/stones.jpg";
 
 const StyledApp = styled.div`
   display: grid;
-  grid-template-columns: 8rem 230px 2rem auto 8rem;
-  grid-template-rows: 2rem auto 2rem 1fr 2rem;
+  grid-template-columns: 4rem 230px 4rem auto 4rem;
+  grid-template-rows: 4rem auto 2rem 1fr 4rem;
   grid-template-areas:
     ". . . . ."
     ". title . display ."
@@ -89,14 +89,12 @@ const StyledApp = styled.div`
     }
   }
 
-  @media only screen and (max-width: 1180px) {
-    height: 0px;
-    grid-template-columns: 6rem 220px 2rem 3.5fr 6rem;
+  @media only screen and (min-width: 1500px) {
+    grid-template-columns: 6em 230px 2rem 3.5fr 6rem;
   }
 
-  @media only screen and (max-width: 1024px) {
-    height: 0px;
-    grid-template-columns: 2em auto 2rem 3.5fr 2rem;
+  @media only screen and (max-width: 1030px) {
+    grid-template-columns: 2em 210px 2rem 3.5fr 2rem;
     grid-template-rows: 2rem auto 2rem 1fr 2rem;
     grid-template-areas:
       ". . . . ."
@@ -109,7 +107,7 @@ const StyledApp = styled.div`
   @media only screen and (max-width: 820px) {
     height: 0px;
     grid-template-columns: 2rem 1fr 2rem;
-    grid-template-rows: 2rem min-content 2rem min-content 2rem 63% 2rem;
+    grid-template-rows: 2rem min-content 2rem min-content 2rem auto 2rem;
     grid-template-areas:
       ". . ."
       ". title ."

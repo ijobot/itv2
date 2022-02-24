@@ -11,30 +11,20 @@ const StyledEntryButtonCollection = styled.div`
   min-height: 100%;
   width: 100%;
 
-  button:last-of-type {
+  &;button:nth-of-type(4) {
     margin-top: auto;
-  }
-
-  @media only screen and (max-width: 1100px) {
-    button {
-      font-size: ${({ small }) => (small ? ".75rem" : "1.25rem")};
-    }
   }
 
   @media only screen and (max-width: 820px) {
     flex-direction: row;
     gap: 0.5rem;
 
-    &;button:nth-of-type(3) {
-      padding: 0 30px;
+    &;button {
+      width: 130px;
     }
 
     &;button:nth-of-type(4) {
-
       margin-left: auto;
-      margin-bottom: 8px;
-      padding: 5px 40px;
-      text-align: center;
     }
   }
 

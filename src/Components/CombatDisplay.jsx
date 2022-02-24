@@ -5,15 +5,17 @@ import Combatants from "./Combatants";
 const StyledCombatDisplay = styled.div`
   grid-area: display;
   background-color: var(--boxColor);
-  border: var(--border);
-  border-right: 2px;
+  border-top: var(--borderTop);
+  border-right: var(--borderRight);
+  border-bottom: var(--borderBottom);
+  border-left: 8px solid var(--borderColorLight);
   padding: 0.5rem;
   z-index: 2;
   overflow-y: scroll;
   overflow-x: hidden;
 
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
   }
 
   ::-webkit-scrollbar-track {
