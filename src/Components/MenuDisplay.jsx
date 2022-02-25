@@ -14,7 +14,7 @@ const StyledMenuDisplay = styled.div`
   flex-direction: column;
   padding: 0.5rem;
   z-index: 2;
-  max-height: 500px;
+  max-height: 400px;
 
   @media only screen and (max-width: 820px) {
     flex-direction: row;

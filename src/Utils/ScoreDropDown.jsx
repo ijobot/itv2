@@ -19,27 +19,42 @@ const StyledScoreDropDown = styled.div`
 
 
   &;button {
-    width: 2.5rem;
-    font-size: 1.5rem;
+    width: 2.1rem;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 1);
     padding: 0;
-    height: 40px;
-    padding-bottom: 3px;
-
+    height: 2.1rem;
+    padding-bottom: 1px;
   }
 
   &::before {
     position: absolute;
-    top: -8px;
+    top: -9px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) rotateZ(135deg);
     content: " ";
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--borderColor);
+    height: 10px;
+    width: 10px;
+    background-color: var(--boxColor);
+    border-left: 3px solid var(--borderColorLight);
+    border-bottom: 3px solid var(--borderColorLight);
     z-index: 15;
     overflow: visible;
   }
-`;
+
+  @media only screen and (max-width: 680px) {
+    position: absolute;
+    top: 110%;
+    left: 5%;
+    padding: 0.5rem;
+    z-index: 10;
+    background-color: var(--boxColor);
+    border: 3px solid var(--borderColorLight);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+  }
+ `;
 
 const ScoreDropDown = ({ index }) => {
   const { showScoreDropDown, setShowScoreDropDown } =

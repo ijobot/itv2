@@ -15,8 +15,8 @@ import stones from "../src/img/stones.jpg";
 
 const StyledApp = styled.div`
   display: grid;
-  grid-template-columns: 4rem 230px 4rem auto 4rem;
-  grid-template-rows: 4rem auto 2rem 1fr 4rem;
+  grid-template-columns: 3rem 230px 2rem auto 3rem;
+  grid-template-rows: 3rem auto 2rem 1fr 3rem;
   grid-template-areas:
     ". . . . ."
     ". title . display ."
@@ -118,35 +118,9 @@ const StyledApp = styled.div`
       ". . .";
   }
 
-  @media only screen and (max-width: 520px) {
-    grid-template-columns: 20px 90% 5px;
-    grid-template-rows: 20px min-content 10px min-content 10px 70% 10px;
-    grid-template-areas:
-      ". . ."
-      ". title ."
-      ". . ."
-      ". buttons ."
-      ". . ."
-      ". display ."
-      ". . .";
-  }
-
-  @media only screen and (max-width: 500px) {
-    grid-template-columns: 20px 90% 5px;
-    grid-template-rows: 20px min-content 10px min-content 10px 70% 10px;
-    grid-template-areas:
-      ". . ."
-      ". title ."
-      ". . ."
-      ". buttons ."
-      ". . ."
-      ". display ."
-      ". . .";
-  }
-
-  @media only screen and (max-width: 389px) {
-    grid-template-columns: 20px 90% 5px;
-    grid-template-rows: 20px min-content 10px min-content 10px 67% 10px;
+  @media only screen and (max-width: 550px) {
+    grid-template-columns: 1rem 1fr 1rem;
+    grid-template-rows: 1rem min-content 1rem min-content 1rem auto 1rem;
     grid-template-areas:
       ". . ."
       ". title ."

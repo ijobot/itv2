@@ -25,14 +25,21 @@ const StyledNameDropDown = styled.div`
 
   &::before {
     position: absolute;
-    top: -8px;
+    top: -9px;
     left: 50%;
-    transform: translateX(-50%);
-    content: "";
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--borderColor);
-    z-index: 4;
+    transform: translateX(-50%) rotateZ(135deg);
+    content: " ";
+    height: 10px;
+    width: 10px;
+    background-color: var(--boxColor);
+    border-left: 3px solid var(--borderColorLight);
+    border-bottom: 3px solid var(--borderColorLight);
+    z-index: 15;
+    overflow: visible;
+  }
+
+  @media only screen and (max-width: 680px) {
+    width: 300px;
   }
 `;
 

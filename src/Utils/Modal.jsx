@@ -17,7 +17,7 @@ const StyledModal = styled.div`
   background-blend-mode: multiply;
   padding: 1rem;
   border: 5px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 100px 1000px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 100px 1000px rgba(0, 0, 0, 0.8);
   width: 600px;
   font-size: 1rem;
   display: grid;
@@ -71,7 +71,7 @@ const Modal = () => {
     return () => {
       document.removeEventListener("click", checkIfClickedOutside);
     };
-  }, [showModal]);
+  }, [showModal, setShowModal]);
 
   return (
     <div>

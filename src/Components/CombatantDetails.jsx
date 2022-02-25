@@ -30,16 +30,24 @@ const StyledCombatantButton = styled.button`
     outline: none;
   }
   @media only screen and (max-width: 1300px) {
-    font-size: ${({ small }) => (small ? "1.25rem" : "1.65rem")};
+    font-size: 1.65rem;
   }
   @media only screen and (max-width: 1100px) {
-    font-size: ${({ small }) => (small ? "1.25rem" : "1.45rem")};
+    font-size: 1.45rem;
   }
   @media only screen and (max-width: 1030px) {
-    font-size: ${({ small }) => (small ? ".1rem" : "1.3rem")};
+    font-size: 1.3rem;
   }
   @media only screen and (max-width: 820px) {
-    font-size: ${({ small }) => (small ? "1rem" : "1.6rem")};
+    font-size: 1.6rem;
+    line-height: 0.9;
+  }
+  @media only screen and (max-width: 680px) {
+    font-size: 1.25rem;
+    line-height: 0.9;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 1rem;
     line-height: 0.9;
   }
 `;

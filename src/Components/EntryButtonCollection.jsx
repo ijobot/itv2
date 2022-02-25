@@ -8,7 +8,7 @@ const StyledEntryButtonCollection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 100%;
+  height: 100%;
   width: 100%;
 
   &;button:nth-of-type(4) {
@@ -24,50 +24,46 @@ const StyledEntryButtonCollection = styled.div`
     }
 
     &;button:nth-of-type(4) {
+      margin-top: 0;
       margin-left: auto;
     }
   }
 
-  @media only screen and (max-width: 520px) {
-    button {
-      height: 70px;
-      width: 80px;
-      font-size: 15px; 
-    }
-  }
-
-  @media only screen and (max-width: 420px) {
-    button {
-      height: 60px;
-      width: 70px;
-      font-size: 12.5px; 
-    }
-  }
-
-  @media only screen and (max-width: 389px) {
-    button {
-      height: 50px;
-      width: 60px;
-      font-size: 10.5px; 
-    }
-  }
-
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 680px) {
     &;button {
-      font-size: ${({ small }) => (small ? ".25rem" : "1rem")};
-      padding: 0;
-      height: 60px;}
-
-      &;button:nth-of-type(3) {
-        padding: 0px;
-      }
-  
-      &;button:nth-of-type(4) {
-        margin-left: auto;
-        padding: 0px;
-      }
+      font-size: 1.25rem;
+      width: 110px;
+      height: 80px;
     }
   }
+
+
+  @media only screen and (max-width: 620px) {
+    &;button {
+      font-size: 1rem;
+      width: 100px;
+      height: 60px;
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
+    &;button {
+      font-size: .95rem;
+      width: 80px;
+      height: 60px;
+      padding: 0 .1rem;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    &;button {
+      font-size: .85rem;
+      width: auto;
+      height: 50px;
+      padding: 0 .1rem;
+    }
+  }
+
 `;
 
 const EntryButtonCollection = () => {

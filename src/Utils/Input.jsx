@@ -27,20 +27,8 @@ const StyledInput = styled.input`
     border: 3px solid var(--hoverTextColor);
   }
 
-  @media only screen and (max-width: 820px) {
-    font-size: 20px;
-    margin-top: 17px;
-    text-align: justified;
-    padding-left: -45px;
-  
-    }
-
-  @media only screen and (max-width: 520px) {
-    font-size: 20px;
-    margin-top: 15px;
-    text-align: justified;
-    padding-left: -45px;
-  
+  @media only screen and (max-width: 680px) {
+    font-size: 1.5rem;
 }
 `;
 

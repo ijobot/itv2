@@ -17,19 +17,31 @@ const StyledTypeDropDown = styled.div`
 
   &::before {
     position: absolute;
-    top: -8px;
+    top: -9px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) rotateZ(135deg);
     content: " ";
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--borderColor);
+    height: 10px;
+    width: 10px;
+    background-color: var(--boxColor);
+    border-left: 3px solid var(--borderColorLight);
+    border-bottom: 3px solid var(--borderColorLight);
     z-index: 15;
+    overflow: visible;
   }
   
   &;button {
     width: 100%;
     height: min-content;
+  }
+
+  &;button:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+  }
+
+  @media only screen and (max-width: 680px) {
+    width: 130px;
+    left: 95%;
   }
   `;
 

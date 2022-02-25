@@ -16,7 +16,7 @@ const StyledMainTitle = styled.div`
 
   @media only screen and (max-width: 1030px) {
     h1 {
-      font-size: 60px;
+      font-size: 3rem;
     }
   }
 
@@ -24,18 +24,13 @@ const StyledMainTitle = styled.div`
     h1 {
       display: inline-block;
       margin-right: 10px;
+      font-size: 4.5rem;
     }
   }
 
-  @media only screen and (max-width: 520px) {
+  @media only screen and (max-width: 550px) {
     h1 {
-      font-size: 30px;
-    }
-  }
-
-  @media only screen and (max-width: 380px) {
-    h1 {
-      font-size: 25px;
+      font-size: 3.5rem;
     }
   }
 `;
