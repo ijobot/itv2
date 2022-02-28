@@ -30,7 +30,7 @@ const StyledMainTitle = styled.div`
 
   @media only screen and (max-width: 550px) {
     h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
     }
   }
 `;

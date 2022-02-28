@@ -12,7 +12,7 @@ const StyledTypeDropDown = styled.div`
   z-index: 10;
   background-color: var(--boxColor);
   border: 3px solid var(--borderColorLight);
-  width: 170px;
+  width: auto;
   height: fit-content;
 
   &::before {
@@ -39,10 +39,26 @@ const StyledTypeDropDown = styled.div`
     margin-bottom: 0.5rem;
   }
 
-  @media only screen and (max-width: 680px) {
-    width: 130px;
-    left: 95%;
+  @media only screen and (max-width: 1030px) {
+    left: 100%;
+    &;button {
+      width: 120px;
+    }
   }
+
+  @media only screen and (max-width: 680px) {
+    &;button {
+      font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    &;button {
+      width: 90px;   
+    }
+  }
+
+
   `;
 
 const TypeDropDown = ({ index, setShowTypeDropDown, showTypeDropDown }) => {

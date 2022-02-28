@@ -42,10 +42,14 @@ const StyledScoreDropDown = styled.div`
     overflow: visible;
   }
 
+  @media only screen and (max-width: 900px) {
+    left: -20%;
+  }
+
   @media only screen and (max-width: 680px) {
     position: absolute;
     top: 110%;
-    left: 5%;
+    left: -50%;
     padding: 0.5rem;
     z-index: 10;
     background-color: var(--boxColor);

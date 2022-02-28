@@ -14,12 +14,11 @@ const StyledNameDropDown = styled.div`
   background-color: var(--boxColor);
   border: 3px solid var(--borderColorLight);
   width: 400px;
-  display: grid;
-  grid-template-columns: 4fr 1fr;
+  display: flex;
   gap: 0.5rem;
 
   &;button {
-    width: 100%;
+    width: 25%;
     height: 60px;
   }
 
@@ -38,8 +37,35 @@ const StyledNameDropDown = styled.div`
     overflow: visible;
   }
 
-  @media only screen and (max-width: 680px) {
-    width: 300px;
+  @media only screen and (max-width: 1030px) {
+    &;button {
+      height: auto;
+      font-size: 1.5rem;
+    }
+
+    &;input {
+      height: auto;
+    }
+  }
+
+  @media only screen and (max-width: 520px) {
+    width: 200px;
+    flex-direction: column;
+
+    &;button {
+      width: 100%;
+      height: auto;
+      font-size: 1rem;
+    }
+
+    &;input {
+      font-size: 1rem;
+      ::placeholder {
+        font-size: 1rem;
+      }
+    }
+
+
   }
 `;
 

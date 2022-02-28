@@ -90,7 +90,7 @@ const StyledApp = styled.div`
   }
 
   @media only screen and (min-width: 1500px) {
-    grid-template-columns: 6em 230px 2rem 3.5fr 6rem;
+    grid-template-columns: 8em 230px 4rem 3.5fr 8rem;
   }
 
   @media only screen and (max-width: 1030px) {
@@ -119,8 +119,8 @@ const StyledApp = styled.div`
   }
 
   @media only screen and (max-width: 550px) {
-    grid-template-columns: 1rem 1fr 1rem;
-    grid-template-rows: 1rem min-content 1rem min-content 1rem auto 1rem;
+    grid-template-columns: 1.5rem 1fr 1.5rem;
+    grid-template-rows: 1.5rem min-content 1.5rem min-content 1.5rem auto 1.5rem;
     grid-template-areas:
       ". . ."
       ". title ."

@@ -4,18 +4,17 @@ import styled from "styled-components";
 const StyledInput = styled.input`
   padding: 0.5rem 1rem;
   background-color: var(--boxColor);
-  border: 2px solid var(--generalColor);
+  border: 3px solid var(--borderColorLight);
   color: rgba(255, 255, 255, 0.7);
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   line-height: 1;
   height: 60px;
-  width: 240px
-  border: none;
 
   ::placeholder {
     color: rgba(255, 255, 255, 0.3);
+    font-size: 1.75rem;
   }
 
   &:not(:last-of-type) {
@@ -27,9 +26,12 @@ const StyledInput = styled.input`
     border: 3px solid var(--hoverTextColor);
   }
 
-  @media only screen and (max-width: 680px) {
+  @media only screen and (max-width: 1030px) {
     font-size: 1.5rem;
-}
+    ::placeholder {
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 const Input = ({ type, placeholder, value, onChange, pattern, autoFocus }) => {

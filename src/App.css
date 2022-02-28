@@ -6,7 +6,7 @@
   --npcColor: #165092ef;
   --boxColor: #11010e;
   --borderColor: #1e0929;
-  --borderColorLight: #574d429d;
+  --borderColorLight: #4b42399d;
   --backgroundColor: #241152;
   --generalColor: #5d5670;
   --borderTop: 10px solid var(--borderColor);
@@ -14,8 +14,9 @@
   --borderBottom: 10px solid var(--borderColorLight);
   --borderLeft: 10px solid var(--borderColorLight);
   --outerFlame: #dbdb15;
-  --innerFlame: #ffa500;
-  --hoverTextColor: #a8a823;
+  --hoverTextColor: #bbbb25;
+  --hoverTextColorSoft: #bbbb2579;
+
   --mainTitleColor: #676a81;
   font-size: 16px;
 }

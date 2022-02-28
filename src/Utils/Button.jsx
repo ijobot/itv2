@@ -5,7 +5,7 @@ const StyledButton = styled.button`
   border: 3px solid rgba(0, 0, 0, 0.3);
   background-color: ${({ buttonColor }) => buttonColor || "inherit"};
   color: ${({ small }) => (small ? "rgba(0, 0, 0, 0.4)" : "rgba(0, 0, 0, 1)")};
-  font-size: ${({ small }) => (small ? "1.25rem" : "1.75rem")};
+  font-size: ${({ small }) => (small ? "1rem" : "1.75rem")};
   font-weight: bold;
   padding: ${({ small }) => (small ? ".1rem 0 0" : ".85rem .85rem .65rem")};
   cursor: pointer;
@@ -30,15 +30,11 @@ const StyledButton = styled.button`
   }
 
   @media only screen and (max-width: 1030px) {
-    width: ${({ small }) => (small ? "30px" : "100%")};
-    font-size: ${({ small }) => (small ? ".75rem" : "1.5rem")};
+    font-size: ${({ small }) => (small ? "1.25rem" : "1.5rem")};
   }
 
   @media only screen and (max-width: 820px) {
-    font-size: ${({ small }) => (small ? "1rem" : "1.5rem")};
     height: ${({ small }) => (small ? "30px" : "80px")};
-    text-align: justified;
-
     :last-of-type {
       margin-left: auto;
     }
@@ -48,18 +44,10 @@ const StyledButton = styled.button`
     }
   }
 
-  @media only screen and (max-width: 680px) {
-    font-size: ${({ small }) => (small ? ".75rem" : "1.25rem")};
-    height: ${({ small }) => (small ? "30px" : "80px")};
-    text-align: justified;
-
-    :last-of-type {
-      margin-left: auto;
-    }
-
-    &:not(:last-of-type) {
-      margin-bottom: 0rem;
-    }
+  @media only screen and (max-width: 530px) {
+    font-size: ${({ small }) => (small ? ".75rem" : "1.5rem")};
+    height: ${({ small }) => (small ? "20px" : "80px")};
+    width: ${({ small }) => (small ? "20px" : "100%")};
   }
 `;
 

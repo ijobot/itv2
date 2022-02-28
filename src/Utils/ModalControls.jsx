@@ -8,30 +8,15 @@ import { ModalContext } from "../Contexts/ModalContext";
 const StyledModalControls = styled.div`
   display: flex;
   grid-column: 1/-1;
-  grid-row: 3/4;
   gap: 1rem;
 
+  &;button {
+    height: 60px;
+    width: 100%;
+  }
+
   @media only screen and (max-width: 820px) {
-    button {
-      height: 60px;
-      width: 100%;
-    }
-  }
-
-  @media only screen and (max-width: 520px) {
-    button {
-      height: 30px;
-      margin-bottom: 10px;
-      width: 80%;
-    }
-  }
-
-  @media only screen and (max-width: 380px) {
-    button {
-      height: 30px;
-      margin-bottom: 10px;
-      width: 80%;
-    }
+    flex-direction: column;
   }
 `;
 
@@ -62,7 +47,7 @@ const ModalControls = () => {
         />
       </div>
 
-      <div stlye={{ justifyItems: "space-between" }}>
+      <div>
         <Button
           color="var(--generalColor)"
           text="Submit"
